@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $notificationMessage = "Animal with name \"" . $nam . "\" has been milked " . $_POST["Q"] . " kg";
         $status = "unread";
         // Insert notification into the notification table
-        $notificationSql = "INSERT INTO notifications (content, status, timestamp) VALUES ('$notificationMessage', '$status', '$date')";
+        $notificationSql = "INSERT INTO notifications (content, status, timestamp) VALUES ('$notificationMessage', '$status', NOW())";
         $conn->query($notificationSql);
 
         // Display success message or redirect to another page
@@ -451,10 +451,10 @@ if ($result->num_rows > 0) {
                             <div class="row align-items-end">
                                 <div class="col-lg-8">
                                     <div class="page-header-title">
-                                        <i class="feather icon-tv bg-c-blue"></i>
+                                    <i class="feather icon-edit bg-c-blue"></i>
                                         <div class="d-inline">
-                                            <h5>Animals</h5>
-                                            <span>Add new Animals</span>
+                                            <h5>Add Milk Production</h5>
+                                            <span>Insert Milk Production of Animals</span>
                                         </div>
                                     </div>
                                 </div>
@@ -463,15 +463,16 @@ if ($result->num_rows > 0) {
                       <ul class="breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
                           
-                        <a href="dashboard-crm.php"><i class="feather icon-home"></i></a>
+                        <i class="feather icon-home"></i>
                           
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Animals</a>
+                        <li class="breadcrumb-item" style = "font-size:13px">
+                          Milk Production
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Add Aniamls</a>
+                        <li class="breadcrumb-item" style = "font-size:13px">
+                          Add Milk Production
                         </li>
+                        
                       </ul>
                     </div>
                   </div>
@@ -488,7 +489,7 @@ if ($result->num_rows > 0) {
                                             <div class="col-sm-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Add Animal</h5>
+                                                        <h5>Add Milk Production</h5>
                                                         <span>Add class of <code>.form-control</code> with
                                                             <code>&lt;input&gt;</code> tag</span>
                                                     </div>

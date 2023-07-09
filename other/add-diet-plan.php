@@ -46,7 +46,7 @@ if (mysqli_query($conn, $sql) === TRUE) {
     
     // Insert notification into the notification table
     
-    $notificationSql = "INSERT INTO notifications (content, status) VALUES ('$notificationMessage', '$status')";
+    $notificationSql = "INSERT INTO notifications (Content, Status, Timestamp) VALUES ('$notificationMessage', '$status',NOW())";
     $conn->query($notificationSql);
     
    
@@ -411,9 +411,9 @@ if ($result->num_rows > 0) {
                             <div class="row align-items-end">
                                 <div class="col-lg-8">
                                     <div class="page-header-title">
-                                        <i class="feather icon-tv bg-c-blue"></i>
+                                        <i class="feather icon-edit bg-c-blue"></i>
                                         <div class="d-inline">
-                                            <h5>Diet Plan </h5>
+                                            <h5>Add Diet Plan </h5>
                                             <span>Set animals diet plan</span>
                                         </div>
                                     </div>
@@ -423,13 +423,13 @@ if ($result->num_rows > 0) {
                       <ul class="breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
                           
-                        <a href="dashboard-crm.php"><i class="feather icon-home"></i></a>
+                        <i class="feather icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Diet plan</a>
+                        <li class="breadcrumb-item" style = "font-size:14px">
+                          Diet plan
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Add Diet Plan</a>
+                        <li class="breadcrumb-item" style = "font-size:14px">
+                          Add Diet Plan
                         </li>
                       </ul>
                     </div>

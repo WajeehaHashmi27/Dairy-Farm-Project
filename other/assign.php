@@ -27,7 +27,7 @@ if (isset($_POST['finish']) ) {
     $notificationMessage = "Animal with name has been assigned diet plan";
     $status = "unread";
     // Insert notification into the notification table
-    $notificationSql = "INSERT INTO notifications (content, status, timestamp) VALUES ('$notificationMessage', '$status', '$date')";
+    $notificationSql = "INSERT INTO notifications (content, status, timestamp) VALUES ('$notificationMessage', '$status', NOW())";
     $conn->query($notificationSql);
 }
     ?>
@@ -405,10 +405,10 @@ while ($row = $result->fetch_assoc()) {
                             <div class="row align-items-end">
                                 <div class="col-lg-8">
                                     <div class="page-header-title">
-                                        <i class="feather icon-tv bg-c-blue"></i>
+                                    <i class="feather icon-edit bg-c-blue"></i>
                                         <div class="d-inline">
-                                            <h5>Animals</h5>
-                                            <span>Add new Animals</span>
+                                            <h5>Assign Diet Plan</h5>
+                                            <span>Assign new Diet plan to Animals</span>
                                         </div>
                                     </div>
                                 </div>
@@ -420,11 +420,11 @@ while ($row = $result->fetch_assoc()) {
                         <a href="dashboard-crm.php"><i class="feather icon-home"></i></a>
                           
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Animals</a>
+                        <li class="breadcrumb-item" style = "font-size:14px">
+                          Diet Plan
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Add Aniamls</a>
+                        <li class="breadcrumb-item" style = "font-size:14px">
+                          Assign Diet Plan
                         </li>
                       </ul>
                     </div>
@@ -442,7 +442,7 @@ while ($row = $result->fetch_assoc()) {
                                             <div class="col-sm-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Add Animal</h5>
+                                                        <h5>Assign Diet Plan </h5>
                                                         <span>Add class of <code>.form-control</code> with
                                                             <code>&lt;input&gt;</code> tag</span>
                                                     </div>
@@ -453,7 +453,7 @@ while ($row = $result->fetch_assoc()) {
                                                                     <section>
                                                                         <form class="wizard-form"
                                                                             id="example-advanced-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-                                                                            <h3> Basic Information </h3>
+                                                                            <h3> Select Diet Plan  </h3>
                                                                             <fieldset>
                                                                             <div class="col-md-6 col-lg-4">
 <div class="card text-white card-primary" style = "width :870px" >
@@ -550,7 +550,7 @@ echo "No ID selected.";
                                                                                 
 
                                                                             </fieldset>
-                                                                            <h3> General information </h3>
+                                                                            <h3> Basic information </h3>
                                                                             <fieldset>
                                                                             <div class="form-group row">
                                                                                     <div class="col-md-4 col-lg-2">

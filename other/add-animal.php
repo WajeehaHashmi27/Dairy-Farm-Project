@@ -45,7 +45,7 @@ if (mysqli_query($conn, $sql) === TRUE) {
  $notificationMessage = "Animal with name \"" . $name . "\" has been added";
  $status = "unread";
  // Insert notification into the notification table
- $notificationSql = "INSERT INTO notifications (content, status) VALUES ('$notificationMessage', '$status')";
+ $notificationSql = "INSERT INTO notifications (Content, Status, Timestamp) VALUES ('$notificationMessage', '$status',NOW())";
  $conn->query($notificationSql);
 
 }
@@ -407,10 +407,10 @@ if ($result->num_rows > 0) {
                             <div class="row align-items-end">
                                 <div class="col-lg-8">
                                     <div class="page-header-title">
-                                        <i class="feather icon-tv bg-c-blue"></i>
+                                    <i class="feather icon-edit bg-c-blue"></i>
                                         <div class="d-inline">
-                                            <h5>Animals</h5>
-                                            <span>Add new Animals</span>
+                                            <h5>Add Animals</h5>
+                                            <span>Insert new Animals</span>
                                         </div>
                                     </div>
                                 </div>
@@ -419,14 +419,14 @@ if ($result->num_rows > 0) {
                       <ul class="breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
                           
-                        <a href="dashboard-crm.php"><i class="feather icon-home"></i></a>
+                        <i class="feather icon-home" ></i>
                           
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Animals</a>
+                        <li class="breadcrumb-item" style = "font-size:14px; ">
+                          Animals
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Add Aniamls</a>
+                        <li class="breadcrumb-item" style = "font-size:14px;">
+                          Add Aniamls
                         </li>
                       </ul>
                     </div>

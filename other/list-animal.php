@@ -441,11 +441,11 @@ while ($row = $result->fetch_assoc()) {
                 <div class="row align-items-end">
                   <div class="col-lg-8">
                     <div class="page-header-title">
-                      <i class="feather icon-inbox bg-c-blue"></i>
+                    <i class="feather icon-sidebar bg-c-blue"></i>
                       <div class="d-inline">
-                        <h5>Animals</h5>
+                        <h5>List Animals</h5>
                         <span
-                          >Showing all the details of animals</span
+                          >Displaying all the Details of Animals</span
                         >
                       </div>
                     </div>
@@ -455,13 +455,13 @@ while ($row = $result->fetch_assoc()) {
                       <ul class="breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
                           
-                        <a href="dashboard-crm.php"><i class="feather icon-home"></i></a>
+                        <i class="feather icon-home"></i>
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Animals</a>
+                        <li class="breadcrumb-item" style = "font-size:14px">
+                          Animals
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">List Aniamls</a>
+                        <li class="breadcrumb-item" style = "font-size:14px">
+                          List Aniamls
                         </li>
                       </ul>
                     </div>

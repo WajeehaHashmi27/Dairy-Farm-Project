@@ -441,11 +441,11 @@ while ($row = $result->fetch_assoc()) {
                 <div class="row align-items-end">
                   <div class="col-lg-8">
                     <div class="page-header-title">
-                      <i class="feather icon-inbox bg-c-blue"></i>
+                    <i class="feather icon-pie-chart bg-c-blue"></i>
                       <div class="d-inline">
-                        <h5>Animals</h5>
+                        <h5>Notifications</h5>
                         <span
-                          >Showing all the details of animals</span
+                          >Displaying all Notifications</span
                         >
                       </div>
                     </div>
@@ -455,14 +455,12 @@ while ($row = $result->fetch_assoc()) {
                       <ul class="breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
                           
-                        <a href="dashboard-crm.php"><i class="feather icon-home"></i></a>
+                        <i class="feather icon-home"></i>
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Animals</a>
+                        <li class="breadcrumb-item" style = "font-size:14px">
+                          Notifications
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">List Aniamls</a>
-                        </li>
+                        
                       </ul>
                     </div>
                   </div>
@@ -476,7 +474,7 @@ while ($row = $result->fetch_assoc()) {
                         <div class="col-sm-12">
                           <div class="card">
                             <div class="card-header">
-                              <h5>List of Animals</h5>
+                              <h5>Notifications</h5>
                               <span
                                 >DataTables has most features enabled by
                                 default, so all you need to do to use it with

@@ -441,11 +441,11 @@ while ($row = $result->fetch_assoc()) {
                 <div class="row align-items-end">
                   <div class="col-lg-8">
                     <div class="page-header-title">
-                      <i class="feather icon-inbox bg-c-blue"></i>
+                    <i class="feather icon-sidebar bg-c-blue"></i>
                       <div class="d-inline">
-                        <h5>Animals</h5>
+                      <h5>Milk Production History</h5>
                         <span
-                          >Showing all the details of animals</span
+                          >Displaying all the previous records of Milk Production </span
                         >
                       </div>
                     </div>
@@ -455,13 +455,13 @@ while ($row = $result->fetch_assoc()) {
                       <ul class="breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
                           
-                        <a href="dashboard-crm.php"><i class="feather icon-home"></i></a>
+                        <i class="feather icon-home"></i>
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Animals</a>
+                        <li class="breadcrumb-item" style = "font-size:13px">
+                          MilkProduction
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">List Aniamls</a>
+                        <li class="breadcrumb-item" style = "font-size:13px">
+                          MilkPrductionHistory
                         </li>
                       </ul>
                     </div>
@@ -476,7 +476,7 @@ while ($row = $result->fetch_assoc()) {
                         <div class="col-sm-12">
                           <div class="card">
                             <div class="card-header">
-                              <h5>List of Animals</h5>
+                              <h5>Milk Production History</h5>
                               <span
                                 >DataTables has most features enabled by
                                 default, so all you need to do to use it with
@@ -494,13 +494,11 @@ while ($row = $result->fetch_assoc()) {
                                     <tr>
                                       <th>ID</th>
                                       <th>Name</th>
-                                      <th>Age</th>
-                                      <th>Gender</th>
-                                      <th>Temperature</th>
-                                      <th>Price</th>
-                                      <th>Pregnant</th>
-                                      <th>Breed</th>
-                                      <th>Update/delete</th>
+                                      <th>Date</th>
+                                      <th>Quantity</th>
+                                      <th>Cost per kg</th>
+                                      <th>Total cost</th>
+                                     
                                     </tr>
                                   </thead>
                                   <tbody>
@@ -520,18 +518,7 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row['Gender'] . "</td>";
         echo "<td>" . $row['Temperature'] . "</td>";
         echo "<td>" . $row['Price'] . "</td>";
-        echo "<td>" . $row['Pregnant'] . "</td>";
-        echo "<td>" . $row['Breed'] . "</td>";
-        echo "<td>";
-        echo "<div class='btn-group' role='group'>";
-        echo "<form method='post' action='update.php' style='display: inline-block;'>";
-        echo "<input type='hidden' name='id' value='" . $row['Id'] . "'>";
-        echo "<button type='submit' class='btn btn-primary btn-sm'>Update</button>";
-        
-        echo "<a href='delete.php?id=" . $row['Id'] . "' class='btn btn-danger btn-sm btn-delete' data-id='" . $row['Id'] . "'>Delete</a>";
-        echo "</form>";
-        echo "</div>";
-        echo "</td>";
+       
         echo "</tr>";
     }
 } else {
@@ -545,15 +532,12 @@ $conn->close();
                                   </tbody>
                                   <tfoot>
                                     <tr>
-                                      <th>ID</th>
+                                    <th>ID</th>
                                       <th>Name</th>
-                                      <th>Age</th>
-                                      <th>Gender</th>
-                                      <th>Temperature</th>
-                                      <th>Price</th>
-                                      <th>Pregnant</th>
-                                      <th>Breed</th>
-                                      <th>Update/delete</th>
+                                      <th>Date</th>
+                                      <th>Quantity</th>
+                                      <th>Cost per kg</th>
+                                      <th>Total cost</th>
                                       
                                     </tr>
                                   </tfoot>

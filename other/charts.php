@@ -379,7 +379,7 @@ if ($result->num_rows > 0) {
                                         <i class="feather icon-pie-chart bg-c-blue"></i>
                                         <div class="d-inline">
                                             <h5>Chart</h5>
-                                            <span>Data as Chart</span>
+                                            <span>Displaying Data in Charts</span>
                                         </div>
                                     </div>
                                 </div>
@@ -387,12 +387,11 @@ if ($result->num_rows > 0) {
                                     <div class="page-header-breadcrumb">
                                         <ul class=" breadcrumb breadcrumb-title">
                                             <li class="breadcrumb-item">
-                                                <a href="dashboard-crm.php"><i class="feather icon-home"></i></a>
+                                                <i class="feather icon-home"></i>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Chart</a>
+                                            <li class="breadcrumb-item" style = "font-size:14px">Charts
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Chart js</a>
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>

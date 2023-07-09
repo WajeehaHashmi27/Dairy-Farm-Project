@@ -45,6 +45,33 @@ if ($result->num_rows > 0) {
 // Close the connection
 
 ?>
+<?php
+// Retrieve total number of animals
+$sqlTotalAnimals = "SELECT COUNT(*) AS totalAnimals FROM animals";
+$resultTotalAnimals = $conn->query($sqlTotalAnimals);
+$rowTotalAnimals = $resultTotalAnimals->fetch_assoc();
+$totalAnimals = $rowTotalAnimals['totalAnimals'];
+
+// Retrieve total number of females
+$sqlTotalFemales = "SELECT COUNT(*) AS totalFemales FROM animals WHERE Gender = 'Female'";
+$resultTotalFemales = $conn->query($sqlTotalFemales);
+$rowTotalFemales = $resultTotalFemales->fetch_assoc();
+$totalFemales = $rowTotalFemales['totalFemales'];
+
+// Retrieve total number of males
+$sqlTotalMales = "SELECT COUNT(*) AS totalMales FROM animals WHERE Gender = 'Male'";
+$resultTotalMales = $conn->query($sqlTotalMales);
+$rowTotalMales = $resultTotalMales->fetch_assoc();
+$totalMales = $rowTotalMales['totalMales'];
+
+// Retrieve total number of pregnant animals
+$sqlTotalPregnants = "SELECT COUNT(*) AS totalPregnants FROM animals WHERE Pregnant = 'Yes'";
+$resultTotalPregnants = $conn->query($sqlTotalPregnants);
+$rowTotalPregnants = $resultTotalPregnants->fetch_assoc();
+$totalPregnants = $rowTotalPregnants['totalPregnants'];
+
+// Close the database connection
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,6 +115,52 @@ if ($result->num_rows > 0) {
 
     <link rel="stylesheet" type="text/css" href="../files/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../files/assets/css/widget.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+<meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+<meta name="author" content="colorlib" />
+
+<link rel="icon" href="../files/assets/images/favicon.ico" type="image/x-icon">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="../files/bower_components/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="../files/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
+
+<link rel="stylesheet" type="text/css" href="../files/assets/icon/feather/css/feather.css">
+
+<link rel="stylesheet" type="text/css" href="../files/assets/css/font-awesome-n.min.css">
+
+<link rel="stylesheet" href="../files/bower_components/chartist/css/chartist.css" type="text/css" media="all">
+
+<link rel="stylesheet" href="../files/assets/pages/chart/radial/css/radial.css" type="text/css" media="all">
+
+<link rel="stylesheet" type="text/css" href="../files/assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="../files/assets/css/widget.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+<meta name="keywords" content="flat ui, admin Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+<meta name="author" content="colorlib" />
+
+<link rel="icon" href="../files/assets/images/favicon.ico" type="image/x-icon">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="../files/bower_components/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="../files/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
+
+<link rel="stylesheet" type="text/css" href="../files/assets/icon/feather/css/feather.css">
+
+<link rel="stylesheet" type="text/css" href="../files/assets/css/font-awesome-n.min.css">
+
+<link rel="stylesheet" type="text/css" href="../files/assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="../files/assets/css/widget.css">
 </head>
 
 <body>
@@ -107,7 +180,7 @@ if ($result->num_rows > 0) {
                             <img class="img-fluid" src="../files/assets/images/logo.png" style="width:180px;"
                                 alt="Theme-Logo" />
                         </a>
-                        <a class="mobile-menu" id="mobile-collapse" href="#!" style="margin-top: 22px;">
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
                             <i class="feather icon-menu icon-toggle-right" ></i>
                         </a>
                         <a class="mobile-options waves-effect waves-light">
@@ -115,7 +188,7 @@ if ($result->num_rows > 0) {
                         </a>
                     </div>
                     <div class="navbar-container container-fluid">
-                        <ul class="nav-left" style="margin-top: 22px;">
+                        <ul class="nav-left" >
                             <!-- Full screen -->
                             <li>
                                 <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
@@ -378,20 +451,11 @@ if ($result->num_rows > 0) {
                                         <i class="feather icon-home bg-c-blue"></i>
                                         <div class="d-inline">
                                             <h5>Dashboard</h5>
-                                            <span>Dashboard here...</span>
+                                            <span>Welcome to CATTLEHUB </span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="page-header-breadcrumb">
-                                        <ul class=" breadcrumb breadcrumb-title">
-                                            <li class="breadcrumb-item">
-                                                <a href="../index-2.html"><i class="feather icon-home"></i></a>
-                                            </li>
-                                            <li class="breadcrumb-item"><a href="#!">Dashboard</a> </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
 
@@ -402,214 +466,494 @@ if ($result->num_rows > 0) {
 
                                         <div class="row">
 
-                                            <div class="col-xl-3 col-md-6">
-                                                <div class="card prod-p-card card-red">
-                                                    <div class="card-body">
-                                                        <div class="row align-items-center m-b-30">
-                                                            <div class="col">
-                                                                <h6 class="m-b-5 text-white">Total Animals</h6>
-                                                                <h3 class="m-b-0 f-w-700 text-white">700</h3>
-                                                                
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <i class="fas fa-database text-c-red f-18"></i>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-md-6">
-                                                <div class="card prod-p-card card-blue">
-                                                    <div class="card-body">
-                                                        <div class="row align-items-center m-b-30">
-                                                            <div class="col">
-                                                                <h6 class="m-b-5 text-white">Total Males</h6>
-                                                                <h3 class="m-b-0 f-w-700 text-white">500</h3>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <i class="fas fa-database text-c-blue f-18"></i>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-md-6">
-                                                <div class="card prod-p-card card-green">
-                                                    <div class="card-body">
-                                                        <div class="row align-items-center m-b-30">
-                                                            <div class="col">
-                                                                <h6 class="m-b-5 text-white">Total Females</h6>
-                                                                <h3 class="m-b-0 f-w-700 text-white">200</h3>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <i class="fas fa-database text-c-green f-18"></i>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-md-6">
-                                                <div class="card prod-p-card card-yellow">
-                                                    <div class="card-body">
-                                                        <div class="row align-items-center m-b-30">
-                                                            <div class="col">
-                                                                <h6 class="m-b-5 text-white">Pregnant</h6>
-                                                                <h3 class="m-b-0 f-w-700 text-white">50</h3>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <i class="fas fa-database text-c-yellow f-18"></i>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="col-xl-3 col-md-6">
+        <div class="card prod-p-card card-red">
+            <div class="card-body">
+                <div class="row align-items-center m-b-30">
+                    <div class="col">
+                        <h6 class="m-b-5 text-white">Total Animals</h6>
+                        <h3 class="m-b-0 f-w-700 text-white"><?php echo $totalAnimals; ?></h3>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-database text-c-red f-18"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card prod-p-card card-blue">
+            <div class="card-body">
+                <div class="row align-items-center m-b-30">
+                    <div class="col">
+                        <h6 class="m-b-5 text-white">Total Males</h6>
+                        <h3 class="m-b-0 f-w-700 text-white"><?php echo $totalMales; ?></h3>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-database text-c-blue f-18"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card prod-p-card card-green">
+            <div class="card-body">
+                <div class="row align-items-center m-b-30">
+                    <div class="col">
+                        <h6 class="m-b-5 text-white">Total Females</h6>
+                        <h3 class="m-b-0 f-w-700 text-white"><?php echo $totalFemales; ?></h3>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-database text-c-green f-18"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card prod-p-card card-yellow">
+            <div class="card-body">
+                <div class="row align-items-center m-b-30">
+                    <div class="col">
+                        <h6 class="m-b-5 text-white">Total Pregnant</h6>
+                        <h3 class="m-b-0 f-w-700 text-white"><?php echo $totalPregnants; ?></h3>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-database text-c-yellow f-18"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                                            <div class="col-xl-4 col-md-6">
+<div class="card latest-update-card">
+<div class="card-header">
+<h5>Groups</h5>
+<div class="card-header-right">
+<ul class="list-unstyled card-option">
+<li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
+<li><i class="feather icon-maximize full-card"></i></li>
+<li><i class="feather icon-minus minimize-card"></i></li>
+<li><i class="feather icon-refresh-cw reload-card"></i></li>
+<li><i class="feather icon-trash close-card"></i></li>
+<li><i class="feather icon-chevron-left open-card-option"></i></li>
+</ul>
+</div>
+</div>
+<div class="card-block">
+<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 290px;"><div class="scroll-widget" style="overflow: hidden; width: auto; height: 290px;">
+<div class="latest-update-box">
+<div class="row p-t-20 p-b-30">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-primary update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Devlopment &amp; Update</h6></a>
+<p class="text-muted m-b-0">Lorem ipsum dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
+</div>
+</div>
+<div class="row p-b-30">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-primary update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Showcases</h6></a>
+<p class="text-muted m-b-0">Lorem dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
+</div>
+</div>
+<div class="row p-b-30">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-success update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Miscellaneous</h6></a>
+<p class="text-muted m-b-0">Lorem ipsum dolor sit ipsum amet, <a href="#!" class="text-c-green"> More</a></p>
+</div>
+</div>
+<div class="row p-b-30">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-danger update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Your Manager Posted.</h6></a>
+<p class="text-muted m-b-0">Lorem ipsum dolor sit amet, <a href="#!" class="text-c-red"> More</a></p>
+</div>
+</div>
+<div class="row p-b-30">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-primary update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Showcases</h6></a>
+<p class="text-muted m-b-0">Lorem dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
+</div>
+</div>
+<div class="row">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-success update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Miscellaneous</h6></a>
+<p class="text-muted m-b-0">Lorem ipsum dolor sit ipsum amet, <a href="#!" class="text-c-green"> More</a></p>
+</div>
+</div>
+</div>
+</div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 132px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 158.979px;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+</div>
+</div>
+</div>
+<div class="col-xl-4 col-md-6">
+<div class="card latest-update-card">
+<div class="card-header">
+<h5>Breed</h5>
+<div class="card-header-right">
+<ul class="list-unstyled card-option">
+<li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
+<li><i class="feather icon-maximize full-card"></i></li>
+<li><i class="feather icon-minus minimize-card"></i></li>
+<li><i class="feather icon-refresh-cw reload-card"></i></li>
+<li><i class="feather icon-trash close-card"></i></li>
+<li><i class="feather icon-chevron-left open-card-option"></i></li>
+</ul>
+</div>
+</div>
+<div class="card-block">
+<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 290px;"><div class="scroll-widget" style="overflow: hidden; width: auto; height: 290px;">
+<div class="latest-update-box">
+<div class="row p-t-20 p-b-30">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-primary update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Devlopment &amp; Update</h6></a>
+<p class="text-muted m-b-0">Lorem ipsum dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
+</div>
+</div>
+<div class="row p-b-30">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-primary update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Showcases</h6></a>
+<p class="text-muted m-b-0">Lorem dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
+</div>
+</div>
+<div class="row p-b-30">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-success update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Miscellaneous</h6></a>
+<p class="text-muted m-b-0">Lorem ipsum dolor sit ipsum amet, <a href="#!" class="text-c-green"> More</a></p>
+</div>
+</div>
+<div class="row p-b-30">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-danger update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Your Manager Posted.</h6></a>
+<p class="text-muted m-b-0">Lorem ipsum dolor sit amet, <a href="#!" class="text-c-red"> More</a></p>
+</div>
+</div>
+<div class="row p-b-30">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-primary update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Showcases</h6></a>
+<p class="text-muted m-b-0">Lorem dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
+</div>
+</div>
+<div class="row">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-success update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Miscellaneous</h6></a>
+<p class="text-muted m-b-0">Lorem ipsum dolor sit ipsum amet, <a href="#!" class="text-c-green"> More</a></p>
+</div>
+</div>
+</div>
+</div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 132px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 158.979px;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+</div>
+</div>
+</div>
+<div class="col-xl-4 col-md-6">
+<div class="card latest-update-card">
+<div class="card-header">
+<h5>Diet Plans</h5>
+<div class="card-header-right">
+<ul class="list-unstyled card-option">
+<li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
+<li><i class="feather icon-maximize full-card"></i></li>
+<li><i class="feather icon-minus minimize-card"></i></li>
+<li><i class="feather icon-refresh-cw reload-card"></i></li>
+<li><i class="feather icon-trash close-card"></i></li>
+<li><i class="feather icon-chevron-left open-card-option"></i></li>
+</ul>
+</div>
+</div>
+<div class="card-block">
+<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 290px;"><div class="scroll-widget" style="overflow: hidden; width: auto; height: 290px;">
+<div class="latest-update-box">
+<div class="row p-t-20 p-b-30">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-primary update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Devlopment &amp; Update</h6></a>
+<p class="text-muted m-b-0">Lorem ipsum dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
+</div>
+</div>
+<div class="row p-b-30">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-primary update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Showcases</h6></a>
+<p class="text-muted m-b-0">Lorem dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
+</div>
+</div>
+<div class="row p-b-30">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-success update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Miscellaneous</h6></a>
+<p class="text-muted m-b-0">Lorem ipsum dolor sit ipsum amet, <a href="#!" class="text-c-green"> More</a></p>
+</div>
+</div>
+<div class="row p-b-30">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-danger update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Your Manager Posted.</h6></a>
+<p class="text-muted m-b-0">Lorem ipsum dolor sit amet, <a href="#!" class="text-c-red"> More</a></p>
+</div>
+</div>
+<div class="row p-b-30">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-primary update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Showcases</h6></a>
+<p class="text-muted m-b-0">Lorem dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
+</div>
+</div>
+<div class="row">
+<div class="col-auto text-right update-meta p-r-0">
+<i class="b-success update-icon ring"></i>
+</div>
+<div class="col p-l-5">
+<a href="#!"><h6>Miscellaneous</h6></a>
+<p class="text-muted m-b-0">Lorem ipsum dolor sit ipsum amet, <a href="#!" class="text-c-green"> More</a></p>
+</div>
 
-
+</div>
+</div>
+</div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 132px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 158.979px;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+</div>
+</div>
+</div>
+<div class="col-xl-4 col-md-6">
+<div class="card table-card">
+<div class="card-header">
+<h5>Milk Quantity</h5>
+<div class="card-header-right">
+<ul class="list-unstyled card-option" style="width: 30px;">
+<li class="first-opt complete" style=""><i class="feather open-card-option icon-chevron-left"></i></li>
+<li><i class="feather icon-maximize full-card"></i></li>
+<li><i class="feather icon-minus minimize-card"></i></li>
+<li><i class="feather icon-refresh-cw reload-card"></i></li>
+<li><i class="feather icon-trash close-card"></i></li>
+<li class="complete"><i class="feather open-card-option icon-chevron-left"></i></li>
+</ul>
+</div>
+</div>
+<div class="card-block p-b-0">
+<div class="table-responsive">
+<table class="table table-hover m-b-0 without-header">
+<tbody>
+<tr>
+<td>
+<h4>Daily</h4></td>
+<td>
+<p></p>
+</td>
+<td class="text-right">
+<label class="label label-warning" style = "padding:10px">4300</label>
+</td>
+</tr>
+<tr>
+<td>
+<h4>Weekly</h4></td>
+<td>
+<p></p>
+</td>
+<td class="text-right">
+<label class="label label-success"style = "padding:10px">4300</label>
+</td>
+</tr>
+<tr>
+<td>
+<h4>Monthly</h4></td>
+<td>
+<p></p>
+</td>
+<td class="text-right">
+<label class="label label-danger"style = "padding:10px">4300</label>
+</td>
+</tr>
+<tr>
+<td>
+<h4>Yearly</h4></td>
+<td>
+<p></p>
+</td>
+<td class="text-right">
+<label class="label label-primary"style = "padding:10px">4300</label>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-4 col-md-6">
+<div class="card table-card">
+<div class="card-header">
+<h5>Feed Amount</h5>
+<div class="card-header-right">
+<ul class="list-unstyled card-option" style="width: 30px;">
+<li class="first-opt complete" style=""><i class="feather open-card-option icon-chevron-left"></i></li>
+<li><i class="feather icon-maximize full-card"></i></li>
+<li><i class="feather icon-minus minimize-card"></i></li>
+<li><i class="feather icon-refresh-cw reload-card"></i></li>
+<li><i class="feather icon-trash close-card"></i></li>
+<li class="complete"><i class="feather open-card-option icon-chevron-left"></i></li>
+</ul>
+</div>
+</div>
+<div class="card-block p-b-0">
+<div class="table-responsive">
+<table class="table table-hover m-b-0 without-header">
+<tbody>
+<tr>
+<td>
+<h4>Daily</h4></td>
+<td>
+<p></p>
+</td>
+<td class="text-right">
+<label class="label label-warning" style = "padding:10px">4300</label>
+</td>
+</tr>
+<tr>
+<td>
+<h4>Weekly</h4></td>
+<td>
+<p></p>
+</td>
+<td class="text-right">
+<label class="label label-success"style = "padding:10px">4300</label>
+</td>
+</tr>
+<tr>
+<td>
+<h4>Monthly</h4></td>
+<td>
+<p></p>
+</td>
+<td class="text-right">
+<label class="label label-danger"style = "padding:10px">4300</label>
+</td>
+</tr>
+<tr>
+<td>
+<h4>Yearly</h4></td>
+<td>
+<p></p>
+</td>
+<td class="text-right">
+<label class="label label-primary"style = "padding:10px">4300</label>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-4 col-md-6">
+<div class="card table-card">
+<div class="card-header">
+<h5>Profit</h5>
+<div class="card-header-right">
+<ul class="list-unstyled card-option" style="width: 30px;">
+<li class="first-opt complete" style=""><i class="feather open-card-option icon-chevron-left"></i></li>
+<li><i class="feather icon-maximize full-card"></i></li>
+<li><i class="feather icon-minus minimize-card"></i></li>
+<li><i class="feather icon-refresh-cw reload-card"></i></li>
+<li><i class="feather icon-trash close-card"></i></li>
+<li class="complete"><i class="feather open-card-option icon-chevron-left"></i></li>
+</ul>
+</div>
+</div>
+<div class="card-block p-b-0">
+<div class="table-responsive">
+<table class="table table-hover m-b-0 without-header">
+<tbody>
+<tr>
+<td>
+<h4>Daily</h4></td>
+<td>
+<p></p>
+</td>
+<td class="text-right">
+<label class="label label-warning" style = "padding:10px">4300</label>
+</td>
+</tr>
+<tr>
+<td>
+<h4>Weekly</h4></td>
+<td>
+<p></p>
+</td>
+<td class="text-right">
+<label class="label label-success"style = "padding:10px">4300</label>
+</td>
+</tr>
+<tr>
+<td>
+<h4>Monthly</h4></td>
+<td>
+<p></p>
+</td>
+<td class="text-right">
+<label class="label label-danger"style = "padding:10px">4300</label>
+</td>
+</tr>
+<tr>
+<td>
+<h4>Yearly</h4></td>
+<td>
+<p></p>
+</td>
+<td class="text-right">
+<label class="label label-primary"style = "padding:10px">4300</label>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>                     
                                             
-
-
-                                            <div class="col-xl-4 col-md-12">
-                                                <div class="card comp-card">
-                                                    <div class="card-body">
-                                                        <div class="row align-items-center">
-                                                             
-                                                            <div class="col">
-                                                                <h6 class="m-b-25">Animal Groups</h6>
-                                                                
-                                                                <h3 class="f-w-700 text-c-blue">Calves</h3>
-                                                                <h3 class="f-w-700 text-c-blue">Heifers</h3>
-                                                                <h3 class="f-w-700 text-c-blue">Dry cows</h3>
-                                                                <h3 class="f-w-700 text-c-blue">Purebred</h3>
-                                                               
-                                                                
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <i class="fas fa-eye bg-c-blue"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-md-6">
-                                                <div class="card comp-card">
-                                                    <div class="card-body">
-                                                        <div class="row align-items-center">
-                                                            <div class="col">
-                                                                <h6 class="m-b-25">Reproduction Status</h6>
-                                                                <h3 class="f-w-700 text-c-green">Blacklist</h3>
-                                                                <h3 class="f-w-700 text-c-green">Non-pregnant</h3>
-                                                                <h3 class="f-w-700 text-c-green">Suckling</h3>
-                                                                <h3 class="f-w-700 text-c-green">Presan</h3>
-                                                                
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <i class="fas fa-bullseye bg-c-green"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-md-6">
-                                                <div class="card comp-card">
-                                                    <div class="card-body">
-                                                        <div class="row align-items-center">
-                                                            <div class="col">
-                                                                <h6 class="m-b-25">Lactation</h6>
-                                                                <h3 class="f-w-700 text-c-yellow">Lactation 0</h3>
-                                                                <h3 class="f-w-700 text-c-yellow">Lactation 1</h3>
-                                                                <h3 class="f-w-700 text-c-yellow">Lactation 2</h3>
-                                                                <h3 class="f-w-700 text-c-yellow">Lactation 3</h3>
-                                                                
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <i class="fas fa-hand-paper bg-c-yellow"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-xl-4 col-md-6">
-                                                <div class="card o-hidden">
-                                                    <div class="card-header">
-                                                        <h5>Milk Quantity</h5>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <div class="row">
-                                                            <div class="col-4">
-                                                                <p class="text-muted m-b-5">Daily</p>
-                                                                <h6>20KG</h6>
-                                                            </div>
-                                                            
-                                                            <div class="col-4">
-                                                                <p class="text-muted m-b-5">Monthly</p>
-                                                                <h6>70KG</h6>
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <p class="text-muted m-b-5">Yearly</p>
-                                                                <h6>150KG</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div id="sal-income" style="height:100px"></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-md-6">
-                                                <div class="card o-hidden">
-                                                    <div class="card-header">
-                                                        <h5>Feed Quantity </h5>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <div class="row">
-                                                        <div class="col-4">
-                                                                <p class="text-muted m-b-5">Daily</p>
-                                                                <h6>5KG</h6>
-                                                            </div>
-                                                            
-                                                            <div class="col-4">
-                                                                <p class="text-muted m-b-5">Monthly</p>
-                                                                <h6>50KG</h6>
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <p class="text-muted m-b-5">Yearly</p>
-                                                                <h6>100KG</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div id="rent-income" style="height:100px"></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-md-12">
-                                                <div class="card o-hidden">
-                                                    <div class="card-header">
-                                                        <h5>Total Profit</h5>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <div class="row">
-                                                        <div class="col-4">
-                                                                <p class="text-muted m-b-5">Daily</p>
-                                                                <h6>25,000Rs</h6>
-                                                            </div>
-                                                            
-                                                            <div class="col-4">
-                                                                <p class="text-muted m-b-5">Monthly</p>
-                                                                <h6>75,000Rs</h6>
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <p class="text-muted m-b-5">Yearly</p>
-                                                                <h6>150,000Rs</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div id="income-analysis" style="height:100px"></div>
-                                                </div>
-                                            </div>
-
 
                                                    </div>
                                                 </div>
@@ -704,6 +1048,69 @@ if ($result->num_rows > 0) {
     <script src="../files/assets/js/vertical/vertical-layout.min.js"></script>
     <script type="text/javascript" src="../files/assets/pages/dashboard/crm-dashboard.min.js"></script>
     <script type="text/javascript" src="../files/assets/js/script.min.js"></script>
+    
+<script type="text/javascript" src="../files/bower_components/jquery/js/jquery.min.js"></script>
+<script type="text/javascript" src="../files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../files/bower_components/popper.js/js/popper.min.js"></script>
+<script type="text/javascript" src="../files/bower_components/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../files/assets/pages/widget/excanvas.js"></script>
+
+<script type="text/javascript" src="../files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+
+<script src="../files/assets/pages/chart/float/jquery.flot.js"></script>
+<script src="../files/assets/pages/chart/float/jquery.flot.categories.js"></script>
+<script src="../files/assets/pages/chart/float/curvedLines.js"></script>
+<script src="../files/assets/pages/chart/float/jquery.flot.tooltip.min.js"></script>
+
+<script src="../files/assets/pages/waves/js/waves.min.js"></script>
+
+<script src="../files/bower_components/chartist/js/chartist.js"></script>
+
+<script type="text/javascript" src="../files/bower_components/chart.js/js/Chart.js"></script>
+
+<script type="text/javascript" src="../files/assets/js/SmoothScroll.js"></script>
+
+<script src="../files/assets/pages/chart/knob/jquery.knob.js"></script>
+
+<script type="text/javascript" src="../files/assets/pages/chart/knob/knob-custom-chart.js"></script>
+
+<script src="../files/assets/pages/widget/amchart/amcharts.js"></script>
+<script src="../files/assets/pages/widget/amchart/gauge.js"></script>
+<script src="../files/assets/pages/widget/amchart/serial.js"></script>
+<script src="../files/assets/pages/widget/amchart/light.js"></script>
+<script src="../files/assets/pages/widget/amchart/pie.min.js"></script>
+<script src="../files/assets/pages/widget/amchart/ammap.min.js"></script>
+<script src="../files/assets/pages/widget/amchart/usaLow.js"></script>
+
+<script src="../files/assets/js/pcoded.min.js"></script>
+<script src="../files/assets/js/vertical/vertical-layout.min.js"></script>
+
+<script type="text/javascript" src="../files/assets/pages/widget/widget-chart.js"></script>
+<script type="text/javascript" src="../files/assets/js/script.js"></script>
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="../files/bower_components/jquery/js/jquery.min.js"></script>
+<script type="text/javascript" src="../files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../files/bower_components/popper.js/js/popper.min.js"></script>
+<script type="text/javascript" src="../files/bower_components/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="../files/assets/pages/waves/js/waves.min.js"></script>
+
+<script type="text/javascript" src="../files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+
+<script src="../files/assets/pages/chart/float/jquery.flot.js"></script>
+<script src="../files/assets/pages/chart/float/jquery.flot.categories.js"></script>
+<script src="../files/assets/pages/chart/float/curvedLines.js"></script>
+<script src="../files/assets/pages/chart/float/jquery.flot.tooltip.min.js"></script>
+
+<script type="text/javascript" src="../files/assets/pages/todo/todo.js"></script>
+
+<script src="../../../developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="../files/assets/pages/google-maps/gmaps.js"></script>
+
+<script src="../files/assets/js/pcoded.min.js"></script>
+<script src="../files/assets/js/vertical/vertical-layout.min.js"></script>
+<script type="text/javascript" src="../files/assets/pages/widget/widget-data.js"></script>
+<script type="text/javascript" src="../files/assets/js/script.min.js"></script>
     <script>
     // Display the logout success message and redirect after a delay
     function logoutSuccess() {

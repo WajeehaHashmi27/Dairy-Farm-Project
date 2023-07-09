@@ -378,10 +378,10 @@ while ($row = $result->fetch_assoc()) {
                             <div class="row align-items-end">
                                 <div class="col-lg-8">
                                     <div class="page-header-title">
-                                        <i class="feather icon-tv bg-c-blue"></i>
+                                    <i class="feather icon-edit bg-c-blue"></i>
                                         <div class="d-inline">
-                                            <h5>Animals</h5>
-                                            <span>Add new Animals</span>
+                                            <h5>Update Animal</h5>
+                                            <span>Update Animal Record</span>
                                         </div>
                                     </div>
                                 </div>
@@ -390,14 +390,17 @@ while ($row = $result->fetch_assoc()) {
                       <ul class="breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
                           
-                        <a href="dashboard-crm.php"><i class="feather icon-home"></i></a>
+                        <i class="feather icon-home"></i>
                           
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Animals</a>
+                        <li class="breadcrumb-item" style = "font-size:14px">
+                          Animals
                         </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Add Aniamls</a>
+                        <li class="breadcrumb-item" style = "font-size:14px">
+                          List Aniamls
+                        </li>
+                        <li class="breadcrumb-item" style = "font-size:14px">
+                          Update Aniaml
                         </li>
                       </ul>
                     </div>
@@ -415,7 +418,7 @@ while ($row = $result->fetch_assoc()) {
                                             <div class="col-sm-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Add Animal</h5>
+                                                        <h5>Update Animal</h5>
                                                         <span>Add class of <code>.form-control</code> with
                                                             <code>&lt;input&gt;</code> tag</span>
                                                     </div>
