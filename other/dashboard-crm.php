@@ -5,7 +5,7 @@ session_start(); // Start the session
 if (isset($_SESSION["username"]) == false) {
     // Redirect the user to the login page or perform any other action
     header("Location: login.php");
-     // Stop executing the rest of the code
+    // Stop executing the rest of the code
 }
 // Check if the logout button is clicked
 if (isset($_POST['logout'])) {
@@ -90,14 +90,10 @@ $totalPregnants = $rowTotalPregnants['totalPregnants'];
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description"
-        content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
-    <meta name="keywords"
-        content="flat ui, admin Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="description" content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords" content="flat ui, admin Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="colorlib" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="../files/assets/images/favicon.ico" type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -116,51 +112,51 @@ $totalPregnants = $rowTotalPregnants['totalPregnants'];
     <link rel="stylesheet" type="text/css" href="../files/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../files/assets/css/widget.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="description" content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
-<meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
-<meta name="author" content="colorlib" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+    <meta name="author" content="colorlib" />
 
-<link rel="icon" href="../files/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../files/assets/images/favicon.ico" type="image/x-icon">
 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
 
-<link rel="stylesheet" type="text/css" href="../files/bower_components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../files/bower_components/bootstrap/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="../files/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../files/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
 
-<link rel="stylesheet" type="text/css" href="../files/assets/icon/feather/css/feather.css">
+    <link rel="stylesheet" type="text/css" href="../files/assets/icon/feather/css/feather.css">
 
-<link rel="stylesheet" type="text/css" href="../files/assets/css/font-awesome-n.min.css">
+    <link rel="stylesheet" type="text/css" href="../files/assets/css/font-awesome-n.min.css">
 
-<link rel="stylesheet" href="../files/bower_components/chartist/css/chartist.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../files/bower_components/chartist/css/chartist.css" type="text/css" media="all">
 
-<link rel="stylesheet" href="../files/assets/pages/chart/radial/css/radial.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../files/assets/pages/chart/radial/css/radial.css" type="text/css" media="all">
 
-<link rel="stylesheet" type="text/css" href="../files/assets/css/style.css">
-<link rel="stylesheet" type="text/css" href="../files/assets/css/widget.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="description" content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
-<meta name="keywords" content="flat ui, admin Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
-<meta name="author" content="colorlib" />
+    <link rel="stylesheet" type="text/css" href="../files/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../files/assets/css/widget.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords" content="flat ui, admin Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="colorlib" />
 
-<link rel="icon" href="../files/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../files/assets/images/favicon.ico" type="image/x-icon">
 
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
 
-<link rel="stylesheet" type="text/css" href="../files/bower_components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../files/bower_components/bootstrap/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="../files/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../files/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
 
-<link rel="stylesheet" type="text/css" href="../files/assets/icon/feather/css/feather.css">
+    <link rel="stylesheet" type="text/css" href="../files/assets/icon/feather/css/feather.css">
 
-<link rel="stylesheet" type="text/css" href="../files/assets/css/font-awesome-n.min.css">
+    <link rel="stylesheet" type="text/css" href="../files/assets/css/font-awesome-n.min.css">
 
-<link rel="stylesheet" type="text/css" href="../files/assets/css/style.css">
-<link rel="stylesheet" type="text/css" href="../files/assets/css/widget.css">
+    <link rel="stylesheet" type="text/css" href="../files/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../files/assets/css/widget.css">
 </head>
 
 <body>
@@ -171,24 +167,23 @@ $totalPregnants = $rowTotalPregnants['totalPregnants'];
 
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
-        <div class="pcoded-container navbar-wrapper" >
+        <div class="pcoded-container navbar-wrapper">
 
             <nav class="navbar header-navbar pcoded-header" style="height: 72px;">
                 <div class="navbar-wrapper">
                     <div class="navbar-logo">
                         <a href="../dashboard-crm.html">
-                            <img class="img-fluid" src="../files/assets/images/logo.png" style="width:180px;"
-                                alt="Theme-Logo" />
+                            <img class="img-fluid" src="../files/assets/images/logo.png" style="width:180px;" alt="Theme-Logo" />
                         </a>
                         <a class="mobile-menu" id="mobile-collapse" href="#!">
-                            <i class="feather icon-menu icon-toggle-right" ></i>
+                            <i class="feather icon-menu icon-toggle-right"></i>
                         </a>
                         <a class="mobile-options waves-effect waves-light">
                             <i class="feather icon-more-horizontal"></i>
                         </a>
                     </div>
                     <div class="navbar-container container-fluid">
-                        <ul class="nav-left" >
+                        <ul class="nav-left">
                             <!-- Full screen -->
                             <li>
                                 <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
@@ -198,29 +193,29 @@ $totalPregnants = $rowTotalPregnants['totalPregnants'];
                         </ul>
                         <!-- notification -->
                         <?php
-// Calculate total reads and total unreads
-// Calculate total reads and total unreads
+                        // Calculate total reads and total unreads
+                        // Calculate total reads and total unreads
 
-// Query to fetch all notifications
-$sql = "SELECT * FROM notifications";
-$result = $conn->query($sql);
-$totalReads = 0;
-$totalUnreads = 0;
-if ($result->num_rows > 0) {
-    
+                        // Query to fetch all notifications
+                        $sql = "SELECT * FROM notifications";
+                        $result = $conn->query($sql);
+                        $totalReads = 0;
+                        $totalUnreads = 0;
+                        if ($result->num_rows > 0) {
 
-    while ($row = $result->fetch_assoc()) {
-        if ($row['Status'] == 'read') {
-            $totalReads++;
-        } else {
-            $totalUnreads++;
-        }
-    }
-}
 
-// Close the database connection
+                            while ($row = $result->fetch_assoc()) {
+                                if ($row['Status'] == 'read') {
+                                    $totalReads++;
+                                } else {
+                                    $totalUnreads++;
+                                }
+                            }
+                        }
 
-?>
+                        // Close the database connection
+
+                        ?>
                         <ul class="nav-right">
                             <li class="header-notification">
                                 <div class="dropdown-primary dropdown">
@@ -228,43 +223,42 @@ if ($result->num_rows > 0) {
                                         <i class="feather icon-bell"></i>
                                         <span class="badge bg-c-red"><?php echo $recordCount; ?></span>
                                     </div>
-                                    <ul class="show-notification notification-view dropdown-menu"
-                                        data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                    <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                                         <td>
-                    <label class="label label-success" style="margin-left: 210px; padding: 12px; display:inline-block margin-top: 5 px">
-                        Unread: <?php echo $totalUnreads; ?> Read: <?php echo $totalReads;?>
-                    </label>
-                </td>
-                
+                                            <label class="label label-success" style="margin-left: 210px; padding: 12px; display:inline-block margin-top: 5 px">
+                                                Unread: <?php echo $totalUnreads; ?> Read: <?php echo $totalReads; ?>
+                                            </label>
+                                        </td>
+
                                         <?php foreach ($notifications as $notification) : ?>
- 
-    <li>
-   
-        <div class="media">
-            <div class="media-body">
-                <h5 class="notification-user"><?php echo $notification['Content']; ?></h5>
-                <p class="notification-msg"></p>
-                <span class="notification-time"><?php echo $notification['Timestamp']; ?></span>
-            </div>
-        </div>
-    </li>
-<?php endforeach; ?>
-<?php if (count($notifications) == 0) : ?>
-                    <li>
-                        <div class="media">
-                            <div class="media-body">
-                                <p>No new notifications</p>
-                            </div>
-                        </div>
-                    </li>
-                <?php endif; ?>
-                <li>
-                    <div class="media">
-                        <div class="media-body">
-                            <a href="not-details.php" class="see-all-link" style=" color: darkblue; font-weight: bold; text-decoration: underline; font-size: 16px; margin-left:130px;">See All</a>
-                        </div>
-                    </div>
-                </li>
+
+                                            <li>
+
+                                                <div class="media">
+                                                    <div class="media-body">
+                                                        <h5 class="notification-user"><?php echo $notification['Content']; ?></h5>
+                                                        <p class="notification-msg"></p>
+                                                        <span class="notification-time"><?php echo $notification['Timestamp']; ?></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        <?php endforeach; ?>
+                                        <?php if (count($notifications) == 0) : ?>
+                                            <li>
+                                                <div class="media">
+                                                    <div class="media-body">
+                                                        <p>No new notifications</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        <?php endif; ?>
+                                        <li>
+                                            <div class="media">
+                                                <div class="media-body">
+                                                    <a href="not-details.php" class="see-all-link" style=" color: darkblue; font-weight: bold; text-decoration: underline; font-size: 16px; margin-left:130px;">See All</a>
+                                                </div>
+                                            </div>
+                                        </li>
 
 
                                     </ul>
@@ -274,24 +268,24 @@ if ($result->num_rows > 0) {
                             <li class="user-profile header-notification">
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
-                                        <img src="../files/assets/images/avatar-4.jpg" class="img-radius"
-                                            alt="User-Profile-Image">
+                                        <img src="../files/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
                                         <span>Admin</span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>
-                                    <ul class="show-notification profile-notification dropdown-menu"
-                                        data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                    <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                                         <li>
                                             <a href="profile.php">
                                                 <i class="feather icon-user"></i> Profile
                                             </a>
-                                        </li><li>
-                                        <form method="POST">
-<button type="button" name="logout" style="border: none; background: none; padding-left: 2px;  font-size: 15px;  outline: none;
+                                        </li>
+                                        <li>
+                                            <form method="POST">
+                                                <button type="button" name="logout" style="border: none; background: none; padding-left: 2px;  font-size: 15px;  outline: none;
         color: rgba(0, 0, 0, 0.8);" onclick="logoutSuccess()">
-        <i class="feather icon-log-out" ></i> Logout
-    </button>
-</form> </li>
+                                                    <i class="feather icon-log-out"></i> Logout
+                                                </button>
+                                            </form>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -303,7 +297,7 @@ if ($result->num_rows > 0) {
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
 
-                <nav class="pcoded-navbar">
+                    <nav class="pcoded-navbar">
                         <div class="nav-list">
                             <div class="pcoded-inner-navbar main-menu">
                                 <div class="pcoded-navigation-label">Navigation</div>
@@ -343,7 +337,7 @@ if ($result->num_rows > 0) {
                                             </span>
                                             <span class="pcoded-mtext">Charts</span>
                                         </a>
-                                        
+
                                     </li>
                                     <li class="pcoded-hasmenu">
                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
@@ -357,13 +351,13 @@ if ($result->num_rows > 0) {
                                                     <span class="pcoded-mtext">List Group</span>
                                                 </a>
                                             </li>
-                                            
+
                                         </ul>
                                     </li>
                                     <li class="pcoded-hasmenu">
                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
                                             <span class="pcoded-micon">
-                                            <i class="feather icon-sidebar"></i>
+                                                <i class="feather icon-sidebar"></i>
                                             </span>
                                             <span class="pcoded-mtext">Diet Plan</span>
                                         </a>
@@ -398,7 +392,7 @@ if ($result->num_rows > 0) {
                                                     <span class="pcoded-mtext">Add Milk production</span>
                                                 </a>
                                             </li>
-                                           
+
                                             <li class>
                                                 <a href="milkproductionrecords.php" class="waves-effect waves-dark">
                                                     <span class="pcoded-mtext">Milk production history</span>
@@ -409,7 +403,7 @@ if ($result->num_rows > 0) {
                                     <li class="pcoded-hasmenu">
                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
                                             <span class="pcoded-micon">
-                                            <i class="feather icon-clipboard"></i>
+                                                <i class="feather icon-clipboard"></i>
                                             </span>
                                             <span class="pcoded-mtext">Reports</span>
                                         </a>
@@ -419,7 +413,7 @@ if ($result->num_rows > 0) {
                                                     <span class="pcoded-mtext">Daily Reports</span>
                                                 </a>
                                             </li>
-                                           
+
                                             <li class>
                                                 <a href="weeklyreport.php" class="waves-effect waves-dark">
                                                     <span class="pcoded-mtext">Weekly Reports</span>
@@ -440,7 +434,7 @@ if ($result->num_rows > 0) {
                                 </ul>
                             </div>
                         </div>
-                    </nav>   
+                    </nav>
 
                     <div class="pcoded-content">
 
@@ -455,7 +449,7 @@ if ($result->num_rows > 0) {
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
 
@@ -466,513 +460,454 @@ if ($result->num_rows > 0) {
 
                                         <div class="row">
 
-                                        <div class="col-xl-3 col-md-6">
-        <div class="card prod-p-card card-red">
-            <div class="card-body">
-                <div class="row align-items-center m-b-30">
-                    <div class="col">
-                        <h6 class="m-b-5 text-white">Total Animals</h6>
-                        <h3 class="m-b-0 f-w-700 text-white"><?php echo $totalAnimals; ?></h3>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-database text-c-red f-18"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card prod-p-card card-blue">
-            <div class="card-body">
-                <div class="row align-items-center m-b-30">
-                    <div class="col">
-                        <h6 class="m-b-5 text-white">Total Males</h6>
-                        <h3 class="m-b-0 f-w-700 text-white"><?php echo $totalMales; ?></h3>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-database text-c-blue f-18"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card prod-p-card card-green">
-            <div class="card-body">
-                <div class="row align-items-center m-b-30">
-                    <div class="col">
-                        <h6 class="m-b-5 text-white">Total Females</h6>
-                        <h3 class="m-b-0 f-w-700 text-white"><?php echo $totalFemales; ?></h3>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-database text-c-green f-18"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card prod-p-card card-yellow">
-            <div class="card-body">
-                <div class="row align-items-center m-b-30">
-                    <div class="col">
-                        <h6 class="m-b-5 text-white">Total Pregnant</h6>
-                        <h3 class="m-b-0 f-w-700 text-white"><?php echo $totalPregnants; ?></h3>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-database text-c-yellow f-18"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                                            <div class="col-xl-3 col-md-6">
+                                                <div class="card prod-p-card card-red">
+                                                    <div class="card-body">
+                                                        <div class="row align-items-center m-b-30">
+                                                            <div class="col">
+                                                                <h6 class="m-b-5 text-white">Total Animals</h6>
+                                                                <h3 class="m-b-0 f-w-700 text-white"><?php echo $totalAnimals; ?></h3>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <i class="fas fa-database text-c-red f-18"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-md-6">
+                                                <div class="card prod-p-card card-blue">
+                                                    <div class="card-body">
+                                                        <div class="row align-items-center m-b-30">
+                                                            <div class="col">
+                                                                <h6 class="m-b-5 text-white">Total Males</h6>
+                                                                <h3 class="m-b-0 f-w-700 text-white"><?php echo $totalMales; ?></h3>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <i class="fas fa-database text-c-blue f-18"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-md-6">
+                                                <div class="card prod-p-card card-green">
+                                                    <div class="card-body">
+                                                        <div class="row align-items-center m-b-30">
+                                                            <div class="col">
+                                                                <h6 class="m-b-5 text-white">Total Females</h6>
+                                                                <h3 class="m-b-0 f-w-700 text-white"><?php echo $totalFemales; ?></h3>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <i class="fas fa-database text-c-green f-18"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-md-6">
+                                                <div class="card prod-p-card card-yellow">
+                                                    <div class="card-body">
+                                                        <div class="row align-items-center m-b-30">
+                                                            <div class="col">
+                                                                <h6 class="m-b-5 text-white">Total Pregnant</h6>
+                                                                <h3 class="m-b-0 f-w-700 text-white"><?php echo $totalPregnants; ?></h3>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <i class="fas fa-database text-c-yellow f-18"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="col-xl-4 col-md-6">
-<div class="card latest-update-card">
-<div class="card-header">
-<h5>Groups</h5>
-<div class="card-header-right">
-<ul class="list-unstyled card-option">
-<li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
-<li><i class="feather icon-maximize full-card"></i></li>
-<li><i class="feather icon-minus minimize-card"></i></li>
-<li><i class="feather icon-refresh-cw reload-card"></i></li>
-<li><i class="feather icon-trash close-card"></i></li>
-<li><i class="feather icon-chevron-left open-card-option"></i></li>
-</ul>
-</div>
-</div>
-<div class="card-block">
-<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 290px;"><div class="scroll-widget" style="overflow: hidden; width: auto; height: 290px;">
-<div class="latest-update-box">
-<div class="row p-t-20 p-b-30">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-primary update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Devlopment &amp; Update</h6></a>
-<p class="text-muted m-b-0">Lorem ipsum dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
-</div>
-</div>
-<div class="row p-b-30">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-primary update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Showcases</h6></a>
-<p class="text-muted m-b-0">Lorem dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
-</div>
-</div>
-<div class="row p-b-30">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-success update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Miscellaneous</h6></a>
-<p class="text-muted m-b-0">Lorem ipsum dolor sit ipsum amet, <a href="#!" class="text-c-green"> More</a></p>
-</div>
-</div>
-<div class="row p-b-30">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-danger update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Your Manager Posted.</h6></a>
-<p class="text-muted m-b-0">Lorem ipsum dolor sit amet, <a href="#!" class="text-c-red"> More</a></p>
-</div>
-</div>
-<div class="row p-b-30">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-primary update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Showcases</h6></a>
-<p class="text-muted m-b-0">Lorem dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
-</div>
-</div>
-<div class="row">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-success update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Miscellaneous</h6></a>
-<p class="text-muted m-b-0">Lorem ipsum dolor sit ipsum amet, <a href="#!" class="text-c-green"> More</a></p>
-</div>
-</div>
-</div>
-</div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 132px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 158.979px;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
-</div>
-</div>
-</div>
-<div class="col-xl-4 col-md-6">
-<div class="card latest-update-card">
-<div class="card-header">
-<h5>Breed</h5>
-<div class="card-header-right">
-<ul class="list-unstyled card-option">
-<li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
-<li><i class="feather icon-maximize full-card"></i></li>
-<li><i class="feather icon-minus minimize-card"></i></li>
-<li><i class="feather icon-refresh-cw reload-card"></i></li>
-<li><i class="feather icon-trash close-card"></i></li>
-<li><i class="feather icon-chevron-left open-card-option"></i></li>
-</ul>
-</div>
-</div>
-<div class="card-block">
-<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 290px;"><div class="scroll-widget" style="overflow: hidden; width: auto; height: 290px;">
-<div class="latest-update-box">
-<div class="row p-t-20 p-b-30">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-primary update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Devlopment &amp; Update</h6></a>
-<p class="text-muted m-b-0">Lorem ipsum dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
-</div>
-</div>
-<div class="row p-b-30">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-primary update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Showcases</h6></a>
-<p class="text-muted m-b-0">Lorem dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
-</div>
-</div>
-<div class="row p-b-30">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-success update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Miscellaneous</h6></a>
-<p class="text-muted m-b-0">Lorem ipsum dolor sit ipsum amet, <a href="#!" class="text-c-green"> More</a></p>
-</div>
-</div>
-<div class="row p-b-30">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-danger update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Your Manager Posted.</h6></a>
-<p class="text-muted m-b-0">Lorem ipsum dolor sit amet, <a href="#!" class="text-c-red"> More</a></p>
-</div>
-</div>
-<div class="row p-b-30">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-primary update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Showcases</h6></a>
-<p class="text-muted m-b-0">Lorem dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
-</div>
-</div>
-<div class="row">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-success update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Miscellaneous</h6></a>
-<p class="text-muted m-b-0">Lorem ipsum dolor sit ipsum amet, <a href="#!" class="text-c-green"> More</a></p>
-</div>
-</div>
-</div>
-</div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 132px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 158.979px;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
-</div>
-</div>
-</div>
-<div class="col-xl-4 col-md-6">
-<div class="card latest-update-card">
-<div class="card-header">
-<h5>Diet Plans</h5>
-<div class="card-header-right">
-<ul class="list-unstyled card-option">
-<li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
-<li><i class="feather icon-maximize full-card"></i></li>
-<li><i class="feather icon-minus minimize-card"></i></li>
-<li><i class="feather icon-refresh-cw reload-card"></i></li>
-<li><i class="feather icon-trash close-card"></i></li>
-<li><i class="feather icon-chevron-left open-card-option"></i></li>
-</ul>
-</div>
-</div>
-<div class="card-block">
-<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 290px;"><div class="scroll-widget" style="overflow: hidden; width: auto; height: 290px;">
-<div class="latest-update-box">
-<div class="row p-t-20 p-b-30">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-primary update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Devlopment &amp; Update</h6></a>
-<p class="text-muted m-b-0">Lorem ipsum dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
-</div>
-</div>
-<div class="row p-b-30">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-primary update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Showcases</h6></a>
-<p class="text-muted m-b-0">Lorem dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
-</div>
-</div>
-<div class="row p-b-30">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-success update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Miscellaneous</h6></a>
-<p class="text-muted m-b-0">Lorem ipsum dolor sit ipsum amet, <a href="#!" class="text-c-green"> More</a></p>
-</div>
-</div>
-<div class="row p-b-30">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-danger update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Your Manager Posted.</h6></a>
-<p class="text-muted m-b-0">Lorem ipsum dolor sit amet, <a href="#!" class="text-c-red"> More</a></p>
-</div>
-</div>
-<div class="row p-b-30">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-primary update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Showcases</h6></a>
-<p class="text-muted m-b-0">Lorem dolor sit amet, <a href="#!" class="text-c-blue"> More</a></p>
-</div>
-</div>
-<div class="row">
-<div class="col-auto text-right update-meta p-r-0">
-<i class="b-success update-icon ring"></i>
-</div>
-<div class="col p-l-5">
-<a href="#!"><h6>Miscellaneous</h6></a>
-<p class="text-muted m-b-0">Lorem ipsum dolor sit ipsum amet, <a href="#!" class="text-c-green"> More</a></p>
-</div>
+                                                <div class="card latest-update-card">
+                                                    <div class="card-header">
+                                                        <h5>Groups</h5>
+                                                        <div class="card-header-right">
+                                                            <ul class="list-unstyled card-option">
+                                                                <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
+                                                                <li><i class="feather icon-maximize full-card"></i></li>
+                                                                <li><i class="feather icon-minus minimize-card"></i></li>
+                                                                <li><i class="feather icon-refresh-cw reload-card"></i></li>
+                                                                <li><i class="feather icon-trash close-card"></i></li>
+                                                                <li><i class="feather icon-chevron-left open-card-option"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-block">
+                                                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 290px;">
+                                                            <div class="scroll-widget" style="overflow-y: scroll; overflow-x: hidden; width: auto; height: 290px;">
+                                                                <?php
+                                                                $sql = "SELECT grp, COUNT(*) AS total FROM animals WHERE grp != '' GROUP BY grp";
+                                                                $result = $conn->query($sql);
+                                                                ?>
+                                                                <div class="latest-update-box">
+                                                                    <?php
+                                                                    while ($row = $result->fetch_assoc()) {
+                                                                    ?>
+                                                                        <div class="row p-t-20 p-b-30">
+                                                                            <div class="col-auto text-right update-meta p-r-0">
+                                                                                <i class="b-primary update-icon ring"></i>
+                                                                            </div>
+                                                                            <div class="col p-l-5">
+                                                                                <a href="#!">
+                                                                                    <h6><?php echo $row['grp'] ?></h6>
+                                                                                </a>
+                                                                                <p class="text-muted m-b-0"><?php echo $row['total'] ?> Animals</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    <?php
+                                                                    }
+                                                                    ?>
 
-</div>
-</div>
-</div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 132px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 158.979px;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
-</div>
-</div>
-</div>
-<div class="col-xl-4 col-md-6">
-<div class="card table-card">
-<div class="card-header">
-<h5>Milk Quantity</h5>
-<div class="card-header-right">
-<ul class="list-unstyled card-option" style="width: 30px;">
-<li class="first-opt complete" style=""><i class="feather open-card-option icon-chevron-left"></i></li>
-<li><i class="feather icon-maximize full-card"></i></li>
-<li><i class="feather icon-minus minimize-card"></i></li>
-<li><i class="feather icon-refresh-cw reload-card"></i></li>
-<li><i class="feather icon-trash close-card"></i></li>
-<li class="complete"><i class="feather open-card-option icon-chevron-left"></i></li>
-</ul>
-</div>
-</div>
-<div class="card-block p-b-0">
-<div class="table-responsive">
-<table class="table table-hover m-b-0 without-header">
-<tbody>
-<tr>
-<td>
-<h4>Daily</h4></td>
-<td>
-<p></p>
-</td>
-<td class="text-right">
-<label class="label label-warning" style = "padding:10px">4300</label>
-</td>
-</tr>
-<tr>
-<td>
-<h4>Weekly</h4></td>
-<td>
-<p></p>
-</td>
-<td class="text-right">
-<label class="label label-success"style = "padding:10px">4300</label>
-</td>
-</tr>
-<tr>
-<td>
-<h4>Monthly</h4></td>
-<td>
-<p></p>
-</td>
-<td class="text-right">
-<label class="label label-danger"style = "padding:10px">4300</label>
-</td>
-</tr>
-<tr>
-<td>
-<h4>Yearly</h4></td>
-<td>
-<p></p>
-</td>
-<td class="text-right">
-<label class="label label-primary"style = "padding:10px">4300</label>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="col-xl-4 col-md-6">
-<div class="card table-card">
-<div class="card-header">
-<h5>Feed Amount</h5>
-<div class="card-header-right">
-<ul class="list-unstyled card-option" style="width: 30px;">
-<li class="first-opt complete" style=""><i class="feather open-card-option icon-chevron-left"></i></li>
-<li><i class="feather icon-maximize full-card"></i></li>
-<li><i class="feather icon-minus minimize-card"></i></li>
-<li><i class="feather icon-refresh-cw reload-card"></i></li>
-<li><i class="feather icon-trash close-card"></i></li>
-<li class="complete"><i class="feather open-card-option icon-chevron-left"></i></li>
-</ul>
-</div>
-</div>
-<div class="card-block p-b-0">
-<div class="table-responsive">
-<table class="table table-hover m-b-0 without-header">
-<tbody>
-<tr>
-<td>
-<h4>Daily</h4></td>
-<td>
-<p></p>
-</td>
-<td class="text-right">
-<label class="label label-warning" style = "padding:10px">4300</label>
-</td>
-</tr>
-<tr>
-<td>
-<h4>Weekly</h4></td>
-<td>
-<p></p>
-</td>
-<td class="text-right">
-<label class="label label-success"style = "padding:10px">4300</label>
-</td>
-</tr>
-<tr>
-<td>
-<h4>Monthly</h4></td>
-<td>
-<p></p>
-</td>
-<td class="text-right">
-<label class="label label-danger"style = "padding:10px">4300</label>
-</td>
-</tr>
-<tr>
-<td>
-<h4>Yearly</h4></td>
-<td>
-<p></p>
-</td>
-<td class="text-right">
-<label class="label label-primary"style = "padding:10px">4300</label>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="col-xl-4 col-md-6">
-<div class="card table-card">
-<div class="card-header">
-<h5>Profit</h5>
-<div class="card-header-right">
-<ul class="list-unstyled card-option" style="width: 30px;">
-<li class="first-opt complete" style=""><i class="feather open-card-option icon-chevron-left"></i></li>
-<li><i class="feather icon-maximize full-card"></i></li>
-<li><i class="feather icon-minus minimize-card"></i></li>
-<li><i class="feather icon-refresh-cw reload-card"></i></li>
-<li><i class="feather icon-trash close-card"></i></li>
-<li class="complete"><i class="feather open-card-option icon-chevron-left"></i></li>
-</ul>
-</div>
-</div>
-<div class="card-block p-b-0">
-<div class="table-responsive">
-<table class="table table-hover m-b-0 without-header">
-<tbody>
-<tr>
-<td>
-<h4>Daily</h4></td>
-<td>
-<p></p>
-</td>
-<td class="text-right">
-<label class="label label-warning" style = "padding:10px">4300</label>
-</td>
-</tr>
-<tr>
-<td>
-<h4>Weekly</h4></td>
-<td>
-<p></p>
-</td>
-<td class="text-right">
-<label class="label label-success"style = "padding:10px">4300</label>
-</td>
-</tr>
-<tr>
-<td>
-<h4>Monthly</h4></td>
-<td>
-<p></p>
-</td>
-<td class="text-right">
-<label class="label label-danger"style = "padding:10px">4300</label>
-</td>
-</tr>
-<tr>
-<td>
-<h4>Yearly</h4></td>
-<td>
-<p></p>
-</td>
-<td class="text-right">
-<label class="label label-primary"style = "padding:10px">4300</label>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>                     
-                                            
-
-                                                   </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 132px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 158.979px;"></div>
+                                                            <div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6">
+                                                <div class="card latest-update-card">
+                                                    <div class="card-header">
+                                                        <h5>Breed</h5>
+                                                        <div class="card-header-right">
+                                                            <ul class="list-unstyled card-option">
+                                                                <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
+                                                                <li><i class="feather icon-maximize full-card"></i></li>
+                                                                <li><i class="feather icon-minus minimize-card"></i></li>
+                                                                <li><i class="feather icon-refresh-cw reload-card"></i></li>
+                                                                <li><i class="feather icon-trash close-card"></i></li>
+                                                                <li><i class="feather icon-chevron-left open-card-option"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-block">
+                                                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 290px;">
+                                                            <div class="scroll-widget" style="overflow-y: scroll; overflow-x: hidden; width: auto; height: 290px;">
+                                                                <?php
+                                                                $sql = "SELECT Breed, COUNT(*) AS total FROM animals WHERE Breed != '' GROUP BY Breed";
+                                                                $result = $conn->query($sql);
+                                                                ?>
+                                                                <div class="latest-update-box">
+                                                                    <?php
+                                                                    while ($row = $result->fetch_assoc()) {
+                                                                    ?>
+                                                                        <div class="row p-t-20 p-b-30">
+                                                                            <div class="col-auto text-right update-meta p-r-0">
+                                                                                <i class="b-primary update-icon ring"></i>
+                                                                            </div>
+                                                                            <div class="col p-l-5">
+                                                                                <a href="#!">
+                                                                                    <h6><?php echo $row['Breed'] ?></h6>
+                                                                                </a>
+                                                                                <p class="text-muted m-b-0"><?php echo $row['total'] ?> Animals</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    <?php
+                                                                    }
+                                                                    ?>
+                                                                </div>
+                                                            </div>
+                                                            <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 132px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 158.979px;"></div>
+                                                            <div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6">
+                                                <div class="card latest-update-card">
+                                                    <div class="card-header">
+                                                        <h5>Diet Plans</h5>
+                                                        <div class="card-header-right">
+                                                            <ul class="list-unstyled card-option">
+                                                                <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
+                                                                <li><i class="feather icon-maximize full-card"></i></li>
+                                                                <li><i class="feather icon-minus minimize-card"></i></li>
+                                                                <li><i class="feather icon-refresh-cw reload-card"></i></li>
+                                                                <li><i class="feather icon-trash close-card"></i></li>
+                                                                <li><i class="feather icon-chevron-left open-card-option"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-block">
+                                                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 290px;">
+                                                            <div class="scroll-widget" style="overflow-y: scroll; overflow-x: hidden; width: auto; height: 290px;">
+                                                                <?php
+                                                                // Select from dietplans table and count the number of animals in each diet plan from animals table using dietplan_id as the key in animals table
+                                                                $sql = "SELECT dietplan.Id, dietplan.Name, COUNT(animals.`Diet plan`) AS total FROM dietplan LEFT JOIN animals ON dietplan.Id = animals.`Diet plan` GROUP BY dietplan.Id";
+                                                                $result = $conn->query($sql);
+                                                                ?>
+                                                                <div class="latest-update-box">
+                                                                    <?php
+                                                                    while ($row = $result->fetch_assoc()) {
+                                                                    ?>
+                                                                        <div class="row p-t-20 p-b-30">
+                                                                            <div class="col-auto text-right update-meta p-r-0">
+                                                                                <i class="b-primary update-icon ring"></i>
+                                                                            </div>
+                                                                            <div class="col p-l-5">
+                                                                                <a href="#!">
+                                                                                    <h6><?php echo $row['Name'] ?></h6>
+                                                                                </a>
+                                                                                <p class="text-muted m-b-0"><?php echo $row['total'] ?> Animals</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    <?php
+                                                                    }
+                                                                    ?>
+                                                                </div>
+                                                            </div>
+                                                            <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 132px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 158.979px;"></div>
+                                                            <div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6">
+                                                <div class="card table-card">
+                                                    <div class="card-header">
+                                                        <h5>Milk Quantity</h5>
+                                                        <div class="card-header-right">
+                                                            <ul class="list-unstyled card-option" style="width: 30px;">
+                                                                <li class="first-opt complete" style=""><i class="feather open-card-option icon-chevron-left"></i></li>
+                                                                <li><i class="feather icon-maximize full-card"></i></li>
+                                                                <li><i class="feather icon-minus minimize-card"></i></li>
+                                                                <li><i class="feather icon-refresh-cw reload-card"></i></li>
+                                                                <li><i class="feather icon-trash close-card"></i></li>
+                                                                <li class="complete"><i class="feather open-card-option icon-chevron-left"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-block p-b-0">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover m-b-0 without-header">
+                                                                <?php
+                                                                $sql = "SELECT a_mp.date AS date, a_mp.quantity AS pm_kg, a_mp.total_cost AS pm_amount FROM `animals_milkproduction` AS a_mp WHERE a_mp.date = (SELECT MAX(date) FROM animals_milkproduction)";
+                                                                $result = $conn->query($sql);
+                                                                $row = $result->fetch_assoc();
+                                                                ?>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <h4>Daily</h4>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p></p>
+                                                                        </td>
+                                                                        <td class="text-right">
+                                                                            <label class="label label-warning" style="padding:10px"><?php echo $row['pm_kg'] ?></label>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <h4>Weekly</h4>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p></p>
+                                                                        </td>
+                                                                        <td class="text-right">
+                                                                            <label class="label label-success" style="padding:10px">24</label>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <h4>Monthly</h4>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p></p>
+                                                                        </td>
+                                                                        <td class="text-right">
+                                                                            <label class="label label-danger" style="padding:10px">103</label>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <h4>Yearly</h4>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p></p>
+                                                                        </td>
+                                                                        <td class="text-right">
+                                                                            <label class="label label-primary" style="padding:10px">1137</label>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6">
+                                                <div class="card table-card">
+                                                    <div class="card-header">
+                                                        <h5>Feed Amount</h5>
+                                                        <div class="card-header-right">
+                                                            <ul class="list-unstyled card-option" style="width: 30px;">
+                                                                <li class="first-opt complete" style=""><i class="feather open-card-option icon-chevron-left"></i></li>
+                                                                <li><i class="feather icon-maximize full-card"></i></li>
+                                                                <li><i class="feather icon-minus minimize-card"></i></li>
+                                                                <li><i class="feather icon-refresh-cw reload-card"></i></li>
+                                                                <li><i class="feather icon-trash close-card"></i></li>
+                                                                <li class="complete"><i class="feather open-card-option icon-chevron-left"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-block p-b-0">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover m-b-0 without-header">
+                                                                <?php
+                                                                $sql = "SELECT a_dp.date AS date, a_dp.quantity AS dp_kg, a_dp.cost AS dp_amount FROM `animals_dietplan` AS a_dp WHERE a_dp.date = (SELECT MAX(date) FROM animals_dietplan)";
+                                                                $result = $conn->query($sql);
+                                                                $row = $result->fetch_assoc();
+                                                                ?>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <h4>Daily</h4>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p></p>
+                                                                        </td>
+                                                                        <td class="text-right">
+                                                                            <label class="label label-warning" style="padding:10px"><?php echo $row['dp_amount'] ?></label>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <h4>Weekly</h4>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p></p>
+                                                                        </td>
+                                                                        <td class="text-right">
+                                                                            <label class="label label-success" style="padding:10px">1300</label>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <h4>Monthly</h4>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p></p>
+                                                                        </td>
+                                                                        <td class="text-right">
+                                                                            <label class="label label-danger" style="padding:10px">5150</label>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <h4>Yearly</h4>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p></p>
+                                                                        </td>
+                                                                        <td class="text-right">
+                                                                            <label class="label label-primary" style="padding:10px">60150</label>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6">
+                                                <div class="card table-card">
+                                                    <div class="card-header">
+                                                        <h5>Profit</h5>
+                                                        <div class="card-header-right">
+                                                            <ul class="list-unstyled card-option" style="width: 30px;">
+                                                                <li class="first-opt complete" style=""><i class="feather open-card-option icon-chevron-left"></i></li>
+                                                                <li><i class="feather icon-maximize full-card"></i></li>
+                                                                <li><i class="feather icon-minus minimize-card"></i></li>
+                                                                <li><i class="feather icon-refresh-cw reload-card"></i></li>
+                                                                <li><i class="feather icon-trash close-card"></i></li>
+                                                                <li class="complete"><i class="feather open-card-option icon-chevron-left"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-block p-b-0">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover m-b-0 without-header">
+                                                                <?php
+                                                                $values_sql = "SELECT a_mp.date AS date, a_mp.total_cost AS pm_amount, SUM(a_mp.total_cost - a_dp.cost) AS pl FROM `animals_milkproduction` AS a_mp INNER JOIN animals_dietplan AS a_dp ON a_mp.a_id = a_dp.a_id INNER JOIN animals AS a ON a_mp.a_id = a.Id WHERE a_mp.date = (SELECT MAX(date) FROM animals_milkproduction)";
+                                                                $values_result = $conn->query($values_sql);
+                                                                $row = $values_result->fetch_assoc();
+                                                                ?>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <h4>Daily</h4>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p></p>
+                                                                        </td>
+                                                                        <td class="text-right">
+                                                                            <label class="label label-warning" style="padding:10px"><?php echo $row['pl'] ?></label>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <h4>Weekly</h4>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p></p>
+                                                                        </td>
+                                                                        <td class="text-right">
+                                                                            <label class="label label-success" style="padding:10px">500</label>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <h4>Monthly</h4>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p></p>
+                                                                        </td>
+                                                                        <td class="text-right">
+                                                                            <label class="label label-danger" style="padding:10px">1360</label>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <h4>Yearly</h4>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p></p>
+                                                                        </td>
+                                                                        <td class="text-right">
+                                                                            <label class="label label-primary" style="padding:10px">7843</label>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
 
-                                        </div>
 
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
+
                         </div>
                     </div>
-
-                    <div id="styleSelector">
-                    </div>
-
                 </div>
             </div>
         </div>
+
+        <div id="styleSelector">
+        </div>
+
+    </div>
+    </div>
+    </div>
     </div>
 
 
@@ -1039,8 +974,7 @@ if ($result->num_rows > 0) {
     <script src="../files/assets/pages/widget/amchart/serial.js"></script>
     <script src="../files/assets/pages/widget/amchart/light.js"></script>
 
-    <script
-        src="../../../developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="../../../developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript" src="../files/assets/pages/google-maps/gmaps.js"></script>
 
@@ -1048,76 +982,77 @@ if ($result->num_rows > 0) {
     <script src="../files/assets/js/vertical/vertical-layout.min.js"></script>
     <script type="text/javascript" src="../files/assets/pages/dashboard/crm-dashboard.min.js"></script>
     <script type="text/javascript" src="../files/assets/js/script.min.js"></script>
-    
-<script type="text/javascript" src="../files/bower_components/jquery/js/jquery.min.js"></script>
-<script type="text/javascript" src="../files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="../files/bower_components/popper.js/js/popper.min.js"></script>
-<script type="text/javascript" src="../files/bower_components/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../files/assets/pages/widget/excanvas.js"></script>
 
-<script type="text/javascript" src="../files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="../files/bower_components/jquery/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../files/bower_components/popper.js/js/popper.min.js"></script>
+    <script type="text/javascript" src="../files/bower_components/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../files/assets/pages/widget/excanvas.js"></script>
 
-<script src="../files/assets/pages/chart/float/jquery.flot.js"></script>
-<script src="../files/assets/pages/chart/float/jquery.flot.categories.js"></script>
-<script src="../files/assets/pages/chart/float/curvedLines.js"></script>
-<script src="../files/assets/pages/chart/float/jquery.flot.tooltip.min.js"></script>
+    <script type="text/javascript" src="../files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
 
-<script src="../files/assets/pages/waves/js/waves.min.js"></script>
+    <script src="../files/assets/pages/chart/float/jquery.flot.js"></script>
+    <script src="../files/assets/pages/chart/float/jquery.flot.categories.js"></script>
+    <script src="../files/assets/pages/chart/float/curvedLines.js"></script>
+    <script src="../files/assets/pages/chart/float/jquery.flot.tooltip.min.js"></script>
 
-<script src="../files/bower_components/chartist/js/chartist.js"></script>
+    <script src="../files/assets/pages/waves/js/waves.min.js"></script>
 
-<script type="text/javascript" src="../files/bower_components/chart.js/js/Chart.js"></script>
+    <script src="../files/bower_components/chartist/js/chartist.js"></script>
 
-<script type="text/javascript" src="../files/assets/js/SmoothScroll.js"></script>
+    <script type="text/javascript" src="../files/bower_components/chart.js/js/Chart.js"></script>
 
-<script src="../files/assets/pages/chart/knob/jquery.knob.js"></script>
+    <script type="text/javascript" src="../files/assets/js/SmoothScroll.js"></script>
 
-<script type="text/javascript" src="../files/assets/pages/chart/knob/knob-custom-chart.js"></script>
+    <script src="../files/assets/pages/chart/knob/jquery.knob.js"></script>
 
-<script src="../files/assets/pages/widget/amchart/amcharts.js"></script>
-<script src="../files/assets/pages/widget/amchart/gauge.js"></script>
-<script src="../files/assets/pages/widget/amchart/serial.js"></script>
-<script src="../files/assets/pages/widget/amchart/light.js"></script>
-<script src="../files/assets/pages/widget/amchart/pie.min.js"></script>
-<script src="../files/assets/pages/widget/amchart/ammap.min.js"></script>
-<script src="../files/assets/pages/widget/amchart/usaLow.js"></script>
+    <script type="text/javascript" src="../files/assets/pages/chart/knob/knob-custom-chart.js"></script>
 
-<script src="../files/assets/js/pcoded.min.js"></script>
-<script src="../files/assets/js/vertical/vertical-layout.min.js"></script>
+    <script src="../files/assets/pages/widget/amchart/amcharts.js"></script>
+    <script src="../files/assets/pages/widget/amchart/gauge.js"></script>
+    <script src="../files/assets/pages/widget/amchart/serial.js"></script>
+    <script src="../files/assets/pages/widget/amchart/light.js"></script>
+    <script src="../files/assets/pages/widget/amchart/pie.min.js"></script>
+    <script src="../files/assets/pages/widget/amchart/ammap.min.js"></script>
+    <script src="../files/assets/pages/widget/amchart/usaLow.js"></script>
 
-<script type="text/javascript" src="../files/assets/pages/widget/widget-chart.js"></script>
-<script type="text/javascript" src="../files/assets/js/script.js"></script>
-<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="../files/bower_components/jquery/js/jquery.min.js"></script>
-<script type="text/javascript" src="../files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="../files/bower_components/popper.js/js/popper.min.js"></script>
-<script type="text/javascript" src="../files/bower_components/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../files/assets/js/pcoded.min.js"></script>
+    <script src="../files/assets/js/vertical/vertical-layout.min.js"></script>
 
-<script src="../files/assets/pages/waves/js/waves.min.js"></script>
+    <script type="text/javascript" src="../files/assets/pages/widget/widget-chart.js"></script>
+    <script type="text/javascript" src="../files/assets/js/script.js"></script>
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script type="text/javascript" src="../files/bower_components/jquery/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../files/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../files/bower_components/popper.js/js/popper.min.js"></script>
+    <script type="text/javascript" src="../files/bower_components/bootstrap/js/bootstrap.min.js"></script>
 
-<script type="text/javascript" src="../files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+    <script src="../files/assets/pages/waves/js/waves.min.js"></script>
 
-<script src="../files/assets/pages/chart/float/jquery.flot.js"></script>
-<script src="../files/assets/pages/chart/float/jquery.flot.categories.js"></script>
-<script src="../files/assets/pages/chart/float/curvedLines.js"></script>
-<script src="../files/assets/pages/chart/float/jquery.flot.tooltip.min.js"></script>
+    <script type="text/javascript" src="../files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
 
-<script type="text/javascript" src="../files/assets/pages/todo/todo.js"></script>
+    <script src="../files/assets/pages/chart/float/jquery.flot.js"></script>
+    <script src="../files/assets/pages/chart/float/jquery.flot.categories.js"></script>
+    <script src="../files/assets/pages/chart/float/curvedLines.js"></script>
+    <script src="../files/assets/pages/chart/float/jquery.flot.tooltip.min.js"></script>
 
-<script src="../../../developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
-<script type="text/javascript" src="../files/assets/pages/google-maps/gmaps.js"></script>
+    <script type="text/javascript" src="../files/assets/pages/todo/todo.js"></script>
 
-<script src="../files/assets/js/pcoded.min.js"></script>
-<script src="../files/assets/js/vertical/vertical-layout.min.js"></script>
-<script type="text/javascript" src="../files/assets/pages/widget/widget-data.js"></script>
-<script type="text/javascript" src="../files/assets/js/script.min.js"></script>
+    <script src="../../../developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="../files/assets/pages/google-maps/gmaps.js"></script>
+
+    <script src="../files/assets/js/pcoded.min.js"></script>
+    <script src="../files/assets/js/vertical/vertical-layout.min.js"></script>
+    <script type="text/javascript" src="../files/assets/pages/widget/widget-data.js"></script>
+    <script type="text/javascript" src="../files/assets/js/script.min.js"></script>
     <script>
-    // Display the logout success message and redirect after a delay
-    function logoutSuccess() {
-        alert("Logout successful");
-        window.location.href = "login.php";
-    }
-</script>
+        // Display the logout success message and redirect after a delay
+        function logoutSuccess() {
+            alert("Logout successful");
+            window.location.href = "login.php";
+        }
+    </script>
 </body>
 
 <!-- Mirrored from demo.dashboardpack.com/admindek-html/default/dashboard-crm.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jul 2023 13:13:44 GMT -->

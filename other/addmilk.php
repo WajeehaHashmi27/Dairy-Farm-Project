@@ -1,4 +1,3 @@
-
 <?php
 session_start(); // Start the session
 
@@ -6,7 +5,7 @@ session_start(); // Start the session
 if (isset($_SESSION["username"]) == false) {
     // Redirect the user to the login page or perform any other action
     header("Location: login.php");
-     // Stop executing the rest of the code
+    // Stop executing the rest of the code
 }
 ?>
 
@@ -47,46 +46,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form inputs
     $date = $_POST["date"];
     $quantity = $_POST["Q"];
+    $cost = $_POST["C"];
+    $grp = $_POST["grp"];
+    $total_cost = $_POST["TotalCost"];
+    $a_id = $_SESSION["selected_id"];
 
-    // Insert data into the animal table
-    //$sql = "INSERT INTO animal_table (date, quantity) VALUES ('$date', '$quantity')";
-    
+    // Insert data into the animal_milkproduction table
+    $sql = "INSERT INTO animals_milkproduction (date, quantity, cost, total_cost, a_id, grp) VALUES ('$date', '$quantity', '$cost', '$total_cost', '$a_id', '$grp')";
+    $result = $conn->query($sql);
+
+    $mp_id = $conn->insert_id;
+
+    $sql2 = "UPDATE `animals` SET `milk production` = '$mp_id', `DateM` = '$date', CostM = $cost, `grp` = '$grp' WHERE `animals`.`Id` = '$a_id'";
+    $result2 = mysqli_query($conn, $sql2);
+
     if (isset($_SESSION['selected_id'])) {
-    $id = $_SESSION['selected_id'];
-    
-    
-    $query = "SELECT * FROM animals WHERE Id = " . $id;
-    $result = mysqli_query($conn, $query);
-    
-    // Check if the query was successful and fetch the data
-    if ($result && $result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    
-    $nam= $row['Name'] ;
-    
-    } else {
-    echo "No record found for ID: " . $id;
-    }
-    
-    // Clear the selected ID from the session
-    unset($_SESSION['selected_id']);
-    } else {
-    echo "No ID selected.";
-    }
-    
-    
-        // Get the last inserted ID
-        $animalID = $conn->insert_id;
-        $formattedDate = date("Y-m-d H:i:s", strtotime($date));
-        // Generate notification message
-        $notificationMessage = "Animal with name \"" . $nam . "\" has been milked " . $_POST["Q"] . " kg";
-        $status = "unread";
-        // Insert notification into the notification table
-        $notificationSql = "INSERT INTO notifications (content, status, timestamp) VALUES ('$notificationMessage', '$status', NOW())";
-        $conn->query($notificationSql);
+        $id = $_SESSION['selected_id'];
 
-        // Display success message or redirect to another page
-    
+
+        $query = "SELECT * FROM animals WHERE Id = " . $id;
+        $result = mysqli_query($conn, $query);
+
+        // Check if the query was successful and fetch the data
+        if ($result && $result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+
+            $nam = $row['Name'];
+        } else {
+            echo "No record found for ID: " . $id;
+        }
+
+        // Clear the selected ID from the session
+        unset($_SESSION['selected_id']);
+    } else {
+        echo "No ID selected.";
+    }
+
+
+    // Get the last inserted ID
+    $animalID = $conn->insert_id;
+    $formattedDate = date("Y-m-d H:i:s", strtotime($date));
+    // Generate notification message
+    $notificationMessage = "Animal with name \"" . $nam . "\" has been milked " . $_POST["Q"] . " kg";
+    $status = "unread";
+    // Insert notification into the notification table
+    $notificationSql = "INSERT INTO notifications (content, status, timestamp) VALUES ('$notificationMessage', '$status', NOW())";
+    $conn->query($notificationSql);
+
+    // Display success message or redirect to another page
+
 }
 
 // Close the connection
@@ -133,14 +141,10 @@ if ($result->num_rows > 0) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description"
-        content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
-    <meta name="keywords"
-        content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+    <meta name="description" content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
     <meta name="author" content="colorlib" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="../files/assets/images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
@@ -171,24 +175,23 @@ if ($result->num_rows > 0) {
 
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
-        <div class="pcoded-container navbar-wrapper" >
+        <div class="pcoded-container navbar-wrapper">
 
             <nav class="navbar header-navbar pcoded-header" style="height: 72px;">
                 <div class="navbar-wrapper">
                     <div class="navbar-logo">
                         <a href="../dashboard-crm.html">
-                            <img class="img-fluid" src="../files/assets/images/logo.png" style="width:180px;"
-                                alt="Theme-Logo" />
+                            <img class="img-fluid" src="../files/assets/images/logo.png" style="width:180px;" alt="Theme-Logo" />
                         </a>
-                        <a class="mobile-menu" id="mobile-collapse" href="#!" >
-                            <i class="feather icon-menu icon-toggle-right" ></i>
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="feather icon-menu icon-toggle-right"></i>
                         </a>
                         <a class="mobile-options waves-effect waves-light">
                             <i class="feather icon-more-horizontal"></i>
                         </a>
                     </div>
                     <div class="navbar-container container-fluid">
-                        <ul class="nav-left" >
+                        <ul class="nav-left">
                             <!-- Full screen -->
                             <li>
                                 <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
@@ -198,28 +201,28 @@ if ($result->num_rows > 0) {
                         </ul>
                         <!-- notification -->
                         <?php
-// Calculate total reads and total unreads
-// Calculate total reads and total unreads
+                        // Calculate total reads and total unreads
+                        // Calculate total reads and total unreads
 
-// Query to fetch all notifications
-$sql = "SELECT * FROM notifications";
-$result = $conn->query($sql);
-$totalReads = 0;
-$totalUnreads = 0;
-if ($result->num_rows > 0) {
-    
+                        // Query to fetch all notifications
+                        $sql = "SELECT * FROM notifications";
+                        $result = $conn->query($sql);
+                        $totalReads = 0;
+                        $totalUnreads = 0;
+                        if ($result->num_rows > 0) {
 
-    while ($row = $result->fetch_assoc()) {
-        if ($row['Status'] == 'read') {
-            $totalReads++;
-        } else {
-            $totalUnreads++;
-        }
-    }
-}
 
-// Close the database connection
-?>
+                            while ($row = $result->fetch_assoc()) {
+                                if ($row['Status'] == 'read') {
+                                    $totalReads++;
+                                } else {
+                                    $totalUnreads++;
+                                }
+                            }
+                        }
+
+                        // Close the database connection
+                        ?>
                         <ul class="nav-right">
                             <li class="header-notification">
                                 <div class="dropdown-primary dropdown">
@@ -227,43 +230,42 @@ if ($result->num_rows > 0) {
                                         <i class="feather icon-bell"></i>
                                         <span class="badge bg-c-red"><?php echo $recordCount; ?></span>
                                     </div>
-                                    <ul class="show-notification notification-view dropdown-menu"
-                                        data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                    <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                                         <td>
-                    <label class="label label-success" style="margin-left: 210px; padding: 12px; display:inline-block margin-top: 5 px">
-                        Unread: <?php echo $totalUnreads; ?> Read: <?php echo $totalReads;?>
-                    </label>
-                </td>
-                
+                                            <label class="label label-success" style="margin-left: 210px; padding: 12px; display:inline-block margin-top: 5 px">
+                                                Unread: <?php echo $totalUnreads; ?> Read: <?php echo $totalReads; ?>
+                                            </label>
+                                        </td>
+
                                         <?php foreach ($notifications as $notification) : ?>
- 
-    <li>
-   
-        <div class="media">
-            <div class="media-body">
-                <h5 class="notification-user"><?php echo $notification['Content']; ?></h5>
-                <p class="notification-msg"></p>
-                <span class="notification-time"><?php echo $notification['Timestamp']; ?></span>
-            </div>
-        </div>
-    </li>
-<?php endforeach; ?>
-<?php if (count($notifications) == 0) : ?>
-                    <li>
-                        <div class="media">
-                            <div class="media-body">
-                                <p>No new notifications</p>
-                            </div>
-                        </div>
-                    </li>
-                <?php endif; ?>
-                <li>
-                    <div class="media">
-                        <div class="media-body">
-                            <a href="not-details.php" class="see-all-link" style=" color: darkblue; font-weight: bold; text-decoration: underline; font-size: 16px; margin-left:130px;">See All</a>
-                        </div>
-                    </div>
-                </li>
+
+                                            <li>
+
+                                                <div class="media">
+                                                    <div class="media-body">
+                                                        <h5 class="notification-user"><?php echo $notification['Content']; ?></h5>
+                                                        <p class="notification-msg"></p>
+                                                        <span class="notification-time"><?php echo $notification['Timestamp']; ?></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        <?php endforeach; ?>
+                                        <?php if (count($notifications) == 0) : ?>
+                                            <li>
+                                                <div class="media">
+                                                    <div class="media-body">
+                                                        <p>No new notifications</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        <?php endif; ?>
+                                        <li>
+                                            <div class="media">
+                                                <div class="media-body">
+                                                    <a href="not-details.php" class="see-all-link" style=" color: darkblue; font-weight: bold; text-decoration: underline; font-size: 16px; margin-left:130px;">See All</a>
+                                                </div>
+                                            </div>
+                                        </li>
 
 
                                     </ul>
@@ -273,24 +275,24 @@ if ($result->num_rows > 0) {
                             <li class="user-profile header-notification">
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
-                                        <img src="../files/assets/images/avatar-4.jpg" class="img-radius"
-                                            alt="User-Profile-Image">
+                                        <img src="../files/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
                                         <span>Admin</span>
                                         <i class="feather icon-chevron-down"></i>
                                     </div>
-                                    <ul class="show-notification profile-notification dropdown-menu"
-                                        data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                    <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                                         <li>
                                             <a href="profile.php">
                                                 <i class="feather icon-user"></i> Profile
                                             </a>
-                                        </li><li>
-                                        <form method="POST">
-<button type="button" name="logout" style="border: none; background: none; padding-left: 2px;  font-size: 15px;  outline: none;
+                                        </li>
+                                        <li>
+                                            <form method="POST">
+                                                <button type="button" name="logout" style="border: none; background: none; padding-left: 2px;  font-size: 15px;  outline: none;
         color: rgba(0, 0, 0, 0.8);" onclick="logoutSuccess()">
-        <i class="feather icon-log-out" ></i> Logout
-    </button>
-</form> </li>
+                                                    <i class="feather icon-log-out"></i> Logout
+                                                </button>
+                                            </form>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -302,7 +304,7 @@ if ($result->num_rows > 0) {
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
 
-                <nav class="pcoded-navbar">
+                    <nav class="pcoded-navbar">
                         <div class="nav-list">
                             <div class="pcoded-inner-navbar main-menu">
                                 <div class="pcoded-navigation-label">Navigation</div>
@@ -342,7 +344,7 @@ if ($result->num_rows > 0) {
                                             </span>
                                             <span class="pcoded-mtext">Charts</span>
                                         </a>
-                                        
+
                                     </li>
                                     <li class="pcoded-hasmenu">
                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
@@ -356,13 +358,13 @@ if ($result->num_rows > 0) {
                                                     <span class="pcoded-mtext">List Group</span>
                                                 </a>
                                             </li>
-                                            
+
                                         </ul>
                                     </li>
                                     <li class="pcoded-hasmenu">
                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
                                             <span class="pcoded-micon">
-                                            <i class="feather icon-sidebar"></i>
+                                                <i class="feather icon-sidebar"></i>
                                             </span>
                                             <span class="pcoded-mtext">Diet Plan</span>
                                         </a>
@@ -397,7 +399,7 @@ if ($result->num_rows > 0) {
                                                     <span class="pcoded-mtext">Add Milk production</span>
                                                 </a>
                                             </li>
-                                           
+
                                             <li class>
                                                 <a href="milkproductionrecords.php" class="waves-effect waves-dark">
                                                     <span class="pcoded-mtext">Milk production history</span>
@@ -408,7 +410,7 @@ if ($result->num_rows > 0) {
                                     <li class="pcoded-hasmenu">
                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
                                             <span class="pcoded-micon">
-                                            <i class="feather icon-clipboard"></i>
+                                                <i class="feather icon-clipboard"></i>
                                             </span>
                                             <span class="pcoded-mtext">Reports</span>
                                         </a>
@@ -418,7 +420,7 @@ if ($result->num_rows > 0) {
                                                     <span class="pcoded-mtext">Daily Reports</span>
                                                 </a>
                                             </li>
-                                           
+
                                             <li class>
                                                 <a href="weeklyreport.php" class="waves-effect waves-dark">
                                                     <span class="pcoded-mtext">Weekly Reports</span>
@@ -439,7 +441,7 @@ if ($result->num_rows > 0) {
                                 </ul>
                             </div>
                         </div>
-                    </nav>   
+                    </nav>
 
 
 
@@ -451,7 +453,7 @@ if ($result->num_rows > 0) {
                             <div class="row align-items-end">
                                 <div class="col-lg-8">
                                     <div class="page-header-title">
-                                    <i class="feather icon-edit bg-c-blue"></i>
+                                        <i class="feather icon-edit bg-c-blue"></i>
                                         <div class="d-inline">
                                             <h5>Add Milk Production</h5>
                                             <span>Insert Milk Production of Animals</span>
@@ -459,26 +461,26 @@ if ($result->num_rows > 0) {
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
-                    <div class="page-header-breadcrumb">
-                      <ul class="breadcrumb breadcrumb-title">
-                        <li class="breadcrumb-item">
-                          
-                        <i class="feather icon-home"></i>
-                          
-                        </li>
-                        <li class="breadcrumb-item" style = "font-size:13px">
-                          Milk Production
-                        </li>
-                        <li class="breadcrumb-item" style = "font-size:13px">
-                          Add Milk Production
-                        </li>
-                        
-                      </ul>
-                    </div>
-                  </div>
+                                    <div class="page-header-breadcrumb">
+                                        <ul class="breadcrumb breadcrumb-title">
+                                            <li class="breadcrumb-item">
+
+                                                <i class="feather icon-home"></i>
+
+                                            </li>
+                                            <li class="breadcrumb-item" style="font-size:13px">
+                                                Milk Production
+                                            </li>
+                                            <li class="breadcrumb-item" style="font-size:13px">
+                                                Add Milk Production
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        
+
 
 
                         <div class="pcoded-inner-content">
@@ -498,82 +500,62 @@ if ($result->num_rows > 0) {
                                                             <div class="col-md-12">
                                                                 <div id="wizard">
                                                                     <section>
-                                                                        <form class="wizard-form"
-                                                                            id="example-advanced-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+                                                                        <form class="wizard-form" id="example-advanced-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                                                                             <h3> Basic Information </h3>
                                                                             <fieldset>
-                                                                            
-                                                                            
-                                                                            <div class="form-group row">
-                                                                                    <div class="col-md-4 col-lg-2">
-                                                                                        <label for="userName-2"
-                                                                                            class="block">Date 
-                                                                                            </label>
-                                                                                    </div>
-                                                                                    <div class="col-md-8 col-lg-10">
-                                                                                    <input class="form-control" type="date" name ="date" id="date">
-                                                                                    </div>
-                                                                                </div> 
-                                                                            <div class="form-group row">
-                                                                                    <div class="col-md-4 col-lg-2">
-                                                                                        <label for="Company-2"
-                                                                                            class="block">Quantity:</label>
-                                                                                    </div>
-                                                                                    <div class="col-md-8 col-lg-10">
-                                                                                        <input id="q"
-                                                                                            name="Q" type="number"
-                                                                                            class="form-control required" value="0" onchange="calculateTotalCost()">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row">
-                                                                                    <div class="col-md-4 col-lg-2">
-                                                                                        <label for="Company-2"
-                                                                                            class="block">Cost:      (per kg)</label>
-                                                                                    </div>
-                                                                                    <div class="col-md-8 col-lg-10">
-                                                                                        <input id="c"
-                                                                                            name="C" type="number"
-                                                                                            class="form-control required" value="0" onchange="calculateTotalCost()">
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="form-group row">
-                                                                                    <div class="col-md-4 col-lg-2">
-                                                                                        <label for="Company-2"
-                                                                                            class="block">Total Cost:</label>
-                                                                                    </div>
-                                                                                    <div class="col-md-8 col-lg-10">
-        <input id="total-cost" name="TotalCost" type="number" class="form-control" readonly>
-                                                                                    </div>
-                                                                                </div>
-                                                                                                                
-                                                                                <div class="form-group row">
-                                                                                    <div class="col-md-4 col-lg-2">
-                                                                                        <label for="Company-2"
-                                                                                            class="block">Group:</label>
-                                                                                    </div>
-                                                                                    <div class="col-md-8 col-lg-10">
-        <input id="grp" name="grp"  class="form-control" readonly>
-                                                                                    </div>
-                                                                                </div>
-                                                                                
-                                                                                
-                                                        
-                                                                                
 
-                                                                    
-                                                                            
-                                                                            
-                                                                            <button
-                                                                            style="margin-left: 820px; margin-top: 40px; margin-bottom: 40px"
-                                type="submit"
-                                class="btn btn-primary waves-effect waves-light"
-                                name="finish"
-                                id="primary-popover-content"
-                                data-container="body"
-                                data-toggle="popover"
-                                title="Primary color states"
-                                data-placement="bottom"
-                                data-content="<div class='color-code'>
+
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-md-4 col-lg-2">
+                                                                                        <label for="userName-2" class="block">Date
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="col-md-8 col-lg-10">
+                                                                                        <input class="form-control" type="date" name="date" id="date">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-md-4 col-lg-2">
+                                                                                        <label for="Company-2" class="block">Quantity:</label>
+                                                                                    </div>
+                                                                                    <div class="col-md-8 col-lg-10">
+                                                                                        <input id="q" name="Q" type="number" class="form-control required" value="0" onchange="calculateTotalCost()">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-md-4 col-lg-2">
+                                                                                        <label for="Company-2" class="block">Cost: (per kg)</label>
+                                                                                    </div>
+                                                                                    <div class="col-md-8 col-lg-10">
+                                                                                        <input id="c" name="C" type="number" class="form-control required" value="0" onchange="calculateTotalCost()">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-md-4 col-lg-2">
+                                                                                        <label for="Company-2" class="block">Total Cost:</label>
+                                                                                    </div>
+                                                                                    <div class="col-md-8 col-lg-10">
+                                                                                        <input id="total-cost" name="TotalCost" type="number" class="form-control" readonly>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-md-4 col-lg-2">
+                                                                                        <label for="Company-2" class="block">Group:</label>
+                                                                                    </div>
+                                                                                    <div class="col-md-8 col-lg-10">
+                                                                                        <input id="grp" name="grp" class="form-control" readonly>
+                                                                                    </div>
+                                                                                </div>
+
+
+
+
+
+
+
+
+                                                                                <button style="margin-left: 820px; margin-top: 40px; margin-bottom: 40px" type="submit" class="btn btn-primary waves-effect waves-light" name="finish" id="primary-popover-content" data-container="body" data-toggle="popover" title="Primary color states" data-placement="bottom" data-content="<div class='color-code'>
                                                             <div class='row'>
                                                               <div class='col-sm-6 col-xs-12'>
                                                                 <span class='block'>Normal</span>
@@ -629,23 +611,22 @@ if ($result->num_rows > 0) {
                           </div>
                       </div>
 
-                      "
-                              >
-                                Finish
-                              </button>                                  <!-- Finish button -->
-                                                                                                        
-        
-    
+                      ">
+                                                                                    Finish
+                                                                                </button> <!-- Finish button -->
+
+
+
 
                                                                             </fieldset>
-                                                                            
-                                                                        
-                                                                    
-     
-                                                                            
-                                                                            
+
+
+
+
+
+
                                                                         </form>
-                                                                        
+
                                                                     </section>
                                                                 </div>
                                                             </div>
@@ -669,8 +650,7 @@ if ($result->num_rows > 0) {
 
             <script src="../files/assets/pages/waves/js/waves.min.js"></script>
 
-            <script type="text/javascript"
-                src="../files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+            <script type="text/javascript" src="../files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
 
             <script type="text/javascript" src="../files/bower_components/modernizr/js/modernizr.js"></script>
             <script type="text/javascript" src="../files/bower_components/modernizr/js/css-scrollbars.js"></script>
@@ -691,53 +671,45 @@ if ($result->num_rows > 0) {
 
 
             <script>
-function calculateTotalCost() {
-    var quantity = document.getElementById('q').value;
-    var cost = document.getElementById('c').value;
-    var totalCost = quantity * cost;
-    document.getElementById('total-cost').value = totalCost.toFixed(2);
+                function calculateTotalCost() {
+                    var quantity = document.getElementById('q').value;
+                    var cost = document.getElementById('c').value;
+                    var totalCost = quantity * cost;
+                    document.getElementById('total-cost').value = totalCost.toFixed(2);
 
-    if((quantity>0)&&(quantity<=5))
-    {
-        document.getElementById('grp').value = 'A';
-    }
-    if((quantity>5)&&(quantity<=10))
-    {
-        document.getElementById('grp').value = 'B';
-    }
-    if((quantity>10)&&(quantity<=15))
-    {
-        document.getElementById('grp').value = 'C';
-    }
-    if((quantity>15)&&(quantity<=20))
-    {
-        document.getElementById('grp').value = 'D';
-    }
-    if((quantity>20)&&(quantity<=25))
-    {
-        document.getElementById('grp').value = 'E';
-    }
-    if((quantity>25)&&(quantity<=30))
-    {
-        document.getElementById('grp').value = 'F';
-    }
-    if((quantity>30))
-    {
-        document.getElementById('grp').value = 'G';
-    }
-   
+                    if ((quantity > 0) && (quantity <= 5)) {
+                        document.getElementById('grp').value = 'A';
+                    }
+                    if ((quantity > 5) && (quantity <= 10)) {
+                        document.getElementById('grp').value = 'B';
+                    }
+                    if ((quantity > 10) && (quantity <= 15)) {
+                        document.getElementById('grp').value = 'C';
+                    }
+                    if ((quantity > 15) && (quantity <= 20)) {
+                        document.getElementById('grp').value = 'D';
+                    }
+                    if ((quantity > 20) && (quantity <= 25)) {
+                        document.getElementById('grp').value = 'E';
+                    }
+                    if ((quantity > 25) && (quantity <= 30)) {
+                        document.getElementById('grp').value = 'F';
+                    }
+                    if ((quantity > 30)) {
+                        document.getElementById('grp').value = 'G';
+                    }
 
-}
 
-</script>
-<script>
-    // Display the logout success message and redirect after a delay
-    function logoutSuccess() {
-        alert("Logout successful");
-        
-        window.location.href = "login.php";
-    }
-</script>
+                }
+            </script>
+            <script>
+                // Display the logout success message and redirect after a delay
+                function logoutSuccess() {
+                    alert("Logout successful");
+
+                    window.location.href = "login.php";
+                }
+            </script>
 </body>
 
 </html>

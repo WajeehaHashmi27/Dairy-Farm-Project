@@ -43,7 +43,7 @@ if (isset($_POST['finish'])) {
     $sql = "INSERT INTO `animals_dietplan` (`a_id`, `d_id`, `date`, `quantity`, `cost`) VALUES ('$a_id', '$d_id', '$date', '$quantity', '$cost')";
     $result = mysqli_query($conn, $sql);
 
-    $sql2 = "UPDATE `animals` SET `Diet plan` = '$d_id', `Date` = $date, Quantity = $quantity, Cost = $cost WHERE `animals`.`Id` = '$a_id'";
+    $sql2 = "UPDATE `animals` SET `Diet plan` = '$d_id', `Date` = '$date', Quantity = $quantity, Cost = $cost WHERE `animals`.`Id` = '$a_id'";
     $result2 = mysqli_query($conn, $sql2);
 
     $formattedDate = date("Y-m-d H:i:s", strtotime($date));
@@ -477,7 +477,7 @@ if ($result->num_rows > 0) {
                                                                     <section>
                                                                         <form class="wizard-form" id="example-advanced-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                                                                             <h3> Select Diet Plan </h3>
-                                                                            <input type="hidden" name="animal_id" value="<?php echo $_SESSION['selected_id'] || ""; ?>">
+                                                                            <input type="hidden" name="animal_id" value="<?php echo isset($_SESSION['selected_id']) ? $_SESSION['selected_id'] : '' ?>" />
                                                                             <fieldset>
                                                                                 <div class="col-md-6 col-lg-4">
                                                                                     <div class="card text-white card-primary" style="width :870px">
